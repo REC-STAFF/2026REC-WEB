@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+/* =========================================================
+   ドッジボール専用スタイル (dojji.css)
+   共通レイアウト・タイトル・枠線・詳細ブロックは common.css に集約済み
+   ========================================================= */
+
+.dojji-img {
+  background-image: url(../images/about-dojji.jpg);
+}
+
+.dojjibasyo-img {
+  background-image: url(../images/place-dojji.jpg);
+}

@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+/* =========================================================
+   〇人〇脚専用スタイル (ninnkyaku.css)
+   共通レイアウト・タイトル・枠線・詳細ブロックは common.css に集約済み
+   ========================================================= */
+
+.ninnkyaku-img {
+  background-image: url(../images/about-ninnkyaku.jpg);
+}
+
+.ninnkyakubasyo-img {
+  background-image: url(../images/place-ninnkyaku.jpg);
+}

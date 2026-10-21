@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+/* =========================================================
+   Q&A (よくある質問) 専用スタイル (situmonn.css)
+   共通レイアウト・タイトル・枠線・カードは common.css に集約済み
+   ========================================================= */
+
+.situmonn-card {
+  margin-bottom: 2rem;
+}
+
+.situmonn-card .question {
+  color: #FFA502;
+  font-size: 1.3rem;
+  font-weight: 900;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.situmonn-card .answer {
+  color: #FFFFFF;
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+
+@media screen and (max-width: 680px) {
+  .situmonn-card .question { font-size: 1.1rem; }
+  .situmonn-card .answer { font-size: 0.92rem; }
+}
