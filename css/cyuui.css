@@ -1,0 +1,157 @@
+@charset "utf-8";
+
+/* =========================================================
+   RE:CREATION 2026 - 注意事項 (cyuui.css)
+   【出場選手ページと100%調和するアリーナ・グラスモーフィズムUI】
+   ========================================================= */
+
+body {
+  background-color: #071E30 !important;
+  background-image:
+    url("../images/arena-court-lines.svg"),
+    linear-gradient(135deg, rgba(56, 182, 240, 0.22) 0%, rgba(44, 159, 216, 0.08) 35%, transparent 65%),
+    linear-gradient(225deg, rgba(254, 200, 56, 0.18) 0%, rgba(255, 165, 2, 0.05) 30%, transparent 60%),
+    linear-gradient(180deg, #071E30 0%, #0D3E5E 35%, #125A82 65%, #082840 100%) !important;
+  background-repeat: no-repeat !important;
+  background-position: center top, center, center, center !important;
+  background-size: cover, 100% 100%, 100% 100%, 100% 100% !important;
+  background-attachment: fixed !important;
+}
+
+.caution-main {
+  max-width: 1100px;
+  width: 92%;
+  margin: 3.5rem auto 7rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* 注意事項カードグリッド */
+.event-guidelines {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.caution-card {
+  background: rgba(6, 26, 44, 0.90);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(56, 182, 240, 0.35);
+  border-top: 4px solid var(--color-primary-bright);
+  border-radius: 20px;
+  padding: 2.5rem 2.8rem;
+  box-shadow: 0 14px 40px rgba(2, 18, 32, 0.55);
+  transition: all var(--trans-smooth);
+}
+
+.caution-card:hover {
+  border-color: rgba(56, 182, 240, 0.7);
+  box-shadow: 0 18px 45px rgba(2, 18, 32, 0.65), 0 0 20px rgba(56, 182, 240, 0.15);
+  transform: translateY(-3px);
+}
+
+.caution-card:nth-child(2) {
+  border-top-color: #FFA502;
+}
+
+.caution-card:nth-child(3) {
+  border-top-color: #38B6F0;
+}
+
+.caution-card:nth-child(4) {
+  border-top-color: #FEC838;
+}
+
+.caution-card:nth-child(5) {
+  border-top-color: #FF6B4A;
+}
+
+/* カードヘッダー */
+.caution-card-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.caution-card-header i {
+  color: var(--color-accent);
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.caution-card-header h3 {
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+/* リストアイテム */
+.caution-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.caution-list li {
+  position: relative;
+  padding-left: 28px;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #EBF4FC;
+  font-weight: 500;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.caution-list li::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 11px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  box-shadow: 0 0 8px rgba(255, 165, 2, 0.8);
+}
+
+.caution-list .cos-link {
+  color: var(--color-primary-bright);
+  text-decoration: underline;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.caution-list .cos-link:hover {
+  color: var(--color-accent);
+}
+
+@media screen and (max-width: 680px) {
+  .caution-main {
+    margin: 2rem auto 5rem;
+  }
+  .caution-card {
+    padding: 1.6rem 1.3rem;
+    border-radius: 16px;
+    background: rgba(6, 26, 44, 0.94) !important;
+  }
+  .caution-card-header h3 {
+    font-size: 1.2rem;
+  }
+  .caution-list li {
+    font-size: 0.90rem;
+    line-height: 1.7;
+    padding-left: 22px;
+  }
+}

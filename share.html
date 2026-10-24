@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RE:CREATION 2026 - スマホ共有プレビュー案内</title>
+  <link rel="stylesheet" href="css/common.css?v=20261022_rev3">
+  <style>
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      background: radial-gradient(circle at 50% 20%, #1674A6 0%, #0F4C73 45%, #071E30 100%);
+      color: #fff;
+      font-family: 'Plus Jakarta Sans', 'Noto Sans JP', sans-serif;
+    }
+    .share-card {
+      background: rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1.5px solid rgba(255, 255, 255, 0.35);
+      border-radius: 24px;
+      padding: 2.5rem 2rem;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    }
+    .badge {
+      display: inline-block;
+      background: #FFA502;
+      color: #072B42;
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 6px 16px;
+      border-radius: 20px;
+      margin-bottom: 1.2rem;
+      letter-spacing: 1px;
+    }
+    h1 {
+      font-size: 1.65rem;
+      font-weight: 900;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.5px;
+    }
+    p.lead {
+      color: #D2E9FA;
+      font-size: 0.95rem;
+      margin-bottom: 1.3rem;
+      line-height: 1.6;
+    }
+        .mode-switcher {
+      display: flex;
+      background: rgba(7, 30, 48, 0.9);
+      border: 1.5px solid rgba(56, 182, 240, 0.5);
+      border-radius: 14px;
+      padding: 5px;
+      margin-bottom: 1.4rem;
+      gap: 6px;
+    }
+    .mode-btn {
+      flex: 1;
+      padding: 11px 12px;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 800;
+      color: #92CDFA;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .mode-btn.active {
+      background: linear-gradient(135deg, #FFA502 0%, #FF7F50 100%);
+      color: #072B42;
+      box-shadow: 0 4px 14px rgba(255, 165, 2, 0.4);
+    }
+    .wifi-alert {
+      background: rgba(255, 165, 2, 0.16);
+      border: 1.5px solid #FFA502;
+      border-radius: 12px;
+      padding: 0.9rem 1.1rem;
+      margin-bottom: 1.5rem;
+      font-size: 0.88rem;
+      color: #FFE6A8;
+      text-align: left;
+      line-height: 1.6;
+    }
+    .wifi-alert strong {
+      color: #FFA502;
+    }
+    .qr-container {
+      background: #FFFFFF;
+      padding: 1.2rem;
+      border-radius: 20px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      margin-bottom: 1.5rem;
+      min-width: 240px;
+      min-height: 240px;
+    }
+    #qrcode-box canvas, #qrcode-box img {
+      display: block;
+      border-radius: 8px;
+    }
+    .url-label {
+      font-size: 0.85rem;
+      color: #92CDFA;
+      margin-bottom: 0.4rem;
+      text-align: left;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .url-box {
+      background: rgba(7, 30, 48, 0.85);
+      border: 1.5px solid rgba(56, 182, 240, 0.6);
+      border-radius: 12px;
+      padding: 0.9rem 1.2rem;
+      font-family: monospace;
+      font-size: 1.15rem;
+      font-weight: bold;
+      color: #5BC4F5;
+      word-break: break-all;
+      margin-bottom: 1.2rem;
+      user-select: all;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .copy-btn {
+      background: rgba(56, 182, 240, 0.3);
+      border: 1px solid rgba(56, 182, 240, 0.7);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 8px 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .copy-btn:hover {
+      background: rgba(56, 182, 240, 0.6);
+      transform: translateY(-1px);
+    }
+    .ip-selector-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 1.4rem;
+      background: rgba(0, 0, 0, 0.25);
+      padding: 8px 12px;
+      border-radius: 10px;
+      font-size: 0.82rem;
+      color: #b9d8ee;
+    }
+    .ip-selector-wrap select, .ip-selector-wrap input {
+      background: #081B2B;
+      color: #FFA502;
+      border: 1px solid #38B6F0;
+      border-radius: 6px;
+      padding: 4px 8px;
+      font-size: 0.85rem;
+      font-family: monospace;
+      font-weight: bold;
+    }
+    .troubleshoot-card {
+      text-align: left;
+      background: rgba(7, 24, 38, 0.85);
+      border: 1px solid rgba(56, 182, 240, 0.3);
+      border-radius: 14px;
+      padding: 1.2rem 1.4rem;
+      margin-bottom: 1.6rem;
+      font-size: 0.84rem;
+      color: #D6E8F7;
+      line-height: 1.6;
+    }
+    .troubleshoot-title {
+      font-weight: 800;
+      color: #FFA502;
+      margin-bottom: 0.6rem;
+      font-size: 0.92rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .troubleshoot-card ol {
+      margin: 0;
+      padding-left: 1.3rem;
+    }
+    .troubleshoot-card li {
+      margin-bottom: 0.4rem;
+    }
+    .troubleshoot-card li:last-child {
+      margin-bottom: 0;
+    }
+    .troubleshoot-card strong {
+      color: #ffffff;
+    }
+    .btn-group {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn-open {
+      display: inline-block;
+      background: linear-gradient(135deg, #FFA502 0%, #FF7F50 100%);
+      color: #072B42;
+      font-weight: 800;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(255, 165, 2, 0.4);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-open:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(255, 165, 2, 0.6);
+    }
+    @media (max-width: 480px) {
+      body {
+        padding: 1rem 0.5rem;
+      }
+      .share-card {
+        padding: 1.6rem 1rem;
+        border-radius: 18px;
+      }
+      .url-box {
+        font-size: 0.95rem;
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .copy-btn {
+        margin-top: 6px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="share-card">
+    <div class="badge">スマートフォン実機プレビュー案内</div>
+    <h1>スマホのカメラで読み取って開く</h1>
+    <p class="lead">
+      PC上で動作しているローカルサーバーへスマホから直接接続します。<br>
+      iPhoneまたはAndroidの<strong>標準カメラ</strong>を下のQRコードにかざしてください。
+    </p>
+
+    <div class="wifi-alert">
+      <strong>【最重要：スマホとPCの接続条件】</strong><br>
+      スマホとPCが<strong>同じWi-Fiルーター（同一SSID）</strong>に接続されている必要があります。<br>
+      ※スマホがモバイル通信（4G/5G）の場合はPCに接続できませんので、Wi-FiをONにしてください。
+    </div>
+
+        <!-- プレビュー対象切り替えタブ (URLに ?dev=1 がある時、またはヘッダー5回タップで表示) -->
+    <div class="mode-switcher" id="secret-mode-switcher" style="display: none;">
+      <button type="button" class="mode-btn" id="btn-mode-stellar" onclick="switchMode('stellar')">🚀 宇宙艦隊3D</button>
+      <button type="button" class="mode-btn" id="btn-mode-blood" onclick="switchMode('blood')">🩸 アクション</button>
+      <button type="button" class="mode-btn active" id="btn-mode-site" onclick="switchMode('site')">🌐 サイト全体</button>
+    </div>
+
+    <!-- オフライン生成対応QRコードコンテナ -->
+    <div class="qr-container">
+      <div id="qrcode-box"></div>
+    </div>
+
+    <div class="url-label">
+      <span>直接URLを入力して開く場合：</span>
+      <span style="font-size: 0.78rem; color: #FFA502;">ポート: 8000</span>
+    </div>
+    <div class="url-box">
+      <span id="share-url">読み込み中...</span>
+      <button class="copy-btn" id="copy-btn" onclick="copyUrl()">URLをコピー</button>
+    </div>
+
+    <!-- 複数アダプタ切替バー -->
+    <div class="ip-selector-wrap" id="ip-selector-container" style="display: none;">
+      <span>接続先IPアドレス変更:</span>
+      <select id="ip-select" onchange="onIpSelectChange(this.value)">
+      </select>
+    </div>
+
+    <!-- スマホで開けない場合の診断ガイド -->
+    <div class="troubleshoot-card">
+      <div class="troubleshoot-title">⚠️ スマホで開けないときの4大チェックリスト</div>
+      <ol>
+        <li><strong>Wi-Fiの確認</strong>: スマホのWi-Fi設定を開き、PCと同じWi-Fiに繋がっていることを確認してください（4G/5G通信では開けません）。</li>
+        <li><strong>読み取りアプリの確認</strong>: LINEやTwitter等のアプリ内スキャナーではなく、<strong>iPhoneの標準カメラ</strong>または<strong>AndroidのGoogleレンズ / Chrome</strong>で読み取ってください（アプリ内ブラウザはローカル通信を遮断することがあります）。</li>
+        <li><strong>ブラウザへ直接URL入力</strong>: SafariやChromeのアドレスバーに <strong id="hint-url" style="color:#FFA502;">http://192.168.0.8:8000</strong> を直接手入力して開くことも可能です。</li>
+        <li><strong>ルーターのAP隔離（セパレーター）対策</strong>: 自宅や学校のWi-Fiルーターで「プライバシーセパレーター（機器間通信遮断）」がONの場合、<strong>「スマホのテザリング（インターネット共有）」をONにしてPCを繋ぐ</strong>と100%確実に開けます！</li>
+      </ol>
+    </div>
+
+    <div class="btn-group">
+      <a href="index.html" id="open-local-btn" class="btn-open" target="_blank">PCブラウザでプレビューを開く</a>
+    </div>
+  </div>
+
+  <!-- オフラインQRコード生成ライブラリ -->
+  <script src="js/qrcode.min.js"></script>
+
+  <script>
+    // サーバーから注入されたPCのローカルWi-Fi IP（未注入時は実機IP 192.168.0.8 に自動フォールバック）
+    var rawInjectedIp = '__SERVER_IP_PLACEHOLDER__';
+    var defaultIp = '192.168.0.8';
+    var port = (window.location.port && window.location.port !== '') ? window.location.port : '8000';
+    var currentIp = defaultIp;
+    var qrInstance = null;
+
+    if (rawInjectedIp && rawInjectedIp.indexOf('__SERVER') === -1 && rawInjectedIp !== '127.0.0.1') {
+      currentIp = rawInjectedIp;
+    } else if (window.location.hostname && window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+      currentIp = window.location.hostname;
+    }
+
+    function renderQr(targetUrl) {
+      var box = document.getElementById('qrcode-box');
+      box.innerHTML = '';
+      if (window.QRCode) {
+        qrInstance = new QRCode(box, {
+          text: targetUrl,
+          width: 220,
+          height: 220,
+          colorDark: "#071E30",
+          colorLight: "#FFFFFF",
+          correctLevel: QRCode.CorrectLevel.M
+        });
+      } else {
+        // オフラインライブラリ未読込時のフォールバック画像
+        var img = document.createElement('img');
+        img.src = 'https://api.qrserver.com/v1/create-qr-code/?size=220x220&data=' + encodeURIComponent(targetUrl);
+        img.alt = 'QRコード';
+        img.style.width = '220px';
+        img.style.height = '220px';
+        box.appendChild(img);
+      }
+    }
+
+    var currentMode = 'site';
+    try {
+      var p = new URLSearchParams(window.location.search);
+      if (p.get('mode')) currentMode = p.get('mode');
+    } catch(e) {}
+
+    function switchMode(mode) {
+      currentMode = mode;
+      ['stellar', 'blood', 'site'].forEach(function(m) {
+        var el = document.getElementById('btn-mode-' + m);
+        if (el) el.classList.toggle('active', mode === m);
+      });
+      updateUrlDisplay(currentIp);
+    }
+
+    function updateUrlDisplay(ip) {
+      currentIp = ip;
+      var path = '/index.html';
+      var btnLabel = 'PCブラウザでサイトを開く';
+      if (currentMode === 'stellar') {
+        path = '/js/engine/stellar-command.html';
+        btnLabel = 'PCブラウザでSTELLAR COMMAND出撃';
+      } else if (currentMode === 'blood') {
+        path = '/js/engine/blood-pressure.html';
+        btnLabel = 'PCブラウザでBLOOD PRESSURE起動';
+      }
+      var targetUrl = 'http://' + ip + ':' + port + path;
+
+      document.getElementById('share-url').textContent = targetUrl;
+      document.getElementById('hint-url').textContent = targetUrl;
+      var openBtn = document.getElementById('open-local-btn');
+      if (openBtn) {
+        openBtn.href = targetUrl;
+        openBtn.textContent = btnLabel;
+      }
+
+      renderQr(targetUrl);
+    }
+
+    function onIpSelectChange(ip) {
+      if (ip) updateUrlDisplay(ip);
+    }
+
+    function copyUrl() {
+      var text = document.getElementById('share-url').textContent;
+      navigator.clipboard.writeText(text).then(function() {
+        var btn = document.getElementById('copy-btn');
+        btn.textContent = 'コピーしました！';
+        setTimeout(function() { btn.textContent = 'URLをコピー'; }, 2000);
+      });
+    }
+
+    // 初期化
+    updateUrlDisplay(currentIp);
+
+    // サーバーの /api/ip エンドポイントから最新の全IPを取得
+    fetch('/api/ip')
+      .then(function(res) { return res.json(); })
+      .then(function(data) {
+        if (data.ip && data.ip !== '127.0.0.1') {
+          updateUrlDisplay(data.ip);
+        }
+        if (data.all_ips && data.all_ips.length > 1) {
+          var container = document.getElementById('ip-selector-container');
+          var select = document.getElementById('ip-select');
+          select.innerHTML = '';
+          data.all_ips.forEach(function(addr) {
+            var opt = document.createElement('option');
+            opt.value = addr;
+            opt.textContent = addr;
+            if (addr === data.ip) opt.selected = true;
+            select.appendChild(opt);
+          });
+          container.style.display = 'flex';
+        }
+      })
+      .catch(function() {
+        // オフライン・file:/// 時はデフォルトIPでそのまま維持
+      });
+  
+    // 隠しモード解禁ギミック（タイトル3回タップで宇宙/アクション選択ボタンが表示される）
+    let secretTapCount = 0;
+    let secretTapTimer = null;
+    const shareLogo = document.getElementById('share-logo-title');
+    if (shareLogo) {
+      shareLogo.addEventListener('click', function() {
+        secretTapCount++;
+        clearTimeout(secretTapTimer);
+        secretTapTimer = setTimeout(function() { secretTapCount = 0; }, 1200);
+        if (secretTapCount >= 3) {
+          const wrap = document.getElementById('mode-selector-wrap');
+          if (wrap) {
+            wrap.style.display = 'flex';
+            wrap.style.animation = 'fadeIn 0.3s ease';
+          }
+          secretTapCount = 0;
+        }
+      });
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+@charset "utf-8";
+
+/* =========================================================
+   RE:CREATION 2026 - Q&A (situmonn.css)
+   【出場選手ページと100%調和するアリーナ・グラスモーフィズムUI】
+   ========================================================= */
+
+body {
+  background-color: #071E30 !important;
+  background-image:
+    url("../images/arena-court-lines.svg"),
+    linear-gradient(135deg, rgba(56, 182, 240, 0.22) 0%, rgba(44, 159, 216, 0.08) 35%, transparent 65%),
+    linear-gradient(225deg, rgba(254, 200, 56, 0.18) 0%, rgba(255, 165, 2, 0.05) 30%, transparent 60%),
+    linear-gradient(180deg, #071E30 0%, #0D3E5E 35%, #125A82 65%, #082840 100%) !important;
+  background-repeat: no-repeat !important;
+  background-position: center top, center, center, center !important;
+  background-size: cover, 100% 100%, 100% 100%, 100% 100% !important;
+  background-attachment: fixed !important;
+}
+
+.qa-main {
+  max-width: 1000px;
+  width: 92%;
+  margin: 3.5rem auto 7rem;
+  position: relative;
+  z-index: 10;
+}
+
+.qa-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.qa-card {
+  background: rgba(6, 26, 44, 0.90);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1.5px solid rgba(56, 182, 240, 0.35);
+  border-radius: 20px;
+  padding: 2.2rem 2.6rem;
+  box-shadow: 0 14px 40px rgba(2, 18, 32, 0.55);
+  transition: all var(--trans-smooth);
+}
+
+.qa-card:hover {
+  border-color: rgba(254, 200, 56, 0.6);
+  box-shadow: 0 18px 45px rgba(2, 18, 32, 0.65), 0 0 20px rgba(254, 200, 56, 0.15);
+  transform: translateY(-3px);
+}
+
+.qa-q {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 1.2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.badge-q {
+  background: linear-gradient(135deg, #FFA502 0%, #FF7F50 100%);
+  color: #072B42;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 900;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(255, 165, 2, 0.4);
+}
+
+.qa-q-text {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.6;
+  margin: 0;
+  padding-top: 3px;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.qa-a {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.badge-a {
+  background: linear-gradient(135deg, #38B6F0 0%, #12638F 100%);
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 900;
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(56, 182, 240, 0.4);
+}
+
+.qa-a-text {
+  font-size: 1.05rem;
+  color: #D8ECF8;
+  line-height: 1.9;
+  margin: 0;
+  padding-top: 4px;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+@media screen and (max-width: 680px) {
+  .qa-main {
+    margin: 2rem auto 5rem;
+  }
+  .qa-card {
+    padding: 1.6rem 1.3rem;
+    border-radius: 16px;
+    background: rgba(6, 26, 44, 0.94) !important;
+  }
+  .badge-q, .badge-a {
+    width: 30px;
+    height: 30px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+  }
+  .qa-q-text {
+    font-size: 1.02rem;
+    line-height: 1.5;
+  }
+  .qa-a-text {
+    font-size: 0.88rem;
+    line-height: 1.7;
+  }
+}

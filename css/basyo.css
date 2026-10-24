@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+/* =========================================================
+   集合場所・座席専用スタイル (basyo.css)
+   共通レイアウト・タイトル・枠線・カードは common.css に集約済み
+   ========================================================= */
+
+.zaseki {
+  /* background-image removed for preparation */
+}
+
+.basyo-img {
+  /* background-image removed for preparation */
+}
+
+.basyo-img2 {
+  /* background-image removed for preparation */
+}
+
+.basyo-title h3 {
+  font-size: 2.2rem;
+  color: #FFA502;
+  text-align: center;
+  margin: 4rem 0 2rem;
+  font-weight: 900;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: 1.5px;
+}
+
+@media screen and (max-width: 680px) {
+  .basyo-title h3 {
+    font-size: 1.25rem;
+    margin: 2.2rem 0 1.0rem;
+  }
+}

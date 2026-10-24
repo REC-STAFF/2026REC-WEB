@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/common.css?v=20261022_rev3">
+  <link rel="stylesheet" href="css/movie.css?v=20261022_rev3">
+  <title>ムービー | RE:CREATION</title>
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="js/components.js?v=20261022_rev3"></script>
+</head>
+
+<body class="page-movie">
+
+<div id="container">
+
+    <site-header></site-header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <a href="index.html"><i data-lucide="home" style="width: 14px; height: 14px;"></i> トップ</a>
+      <span class="sep">/</span>
+      <span class="current">ムービー</span>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main movie-main">
+
+      <section class="movie-section">
+        
+        <div class="section-title ">
+          <h2>ムービー</h2>
+          <h3>レ・クリエイションＯＰ</h3>
+        </div>
+
+        <!-- 動画プレイヤー -->
+        <div class="jumbotron-container">
+          <!-- リギング装飾 -->
+          <div class="jumbotron-rigging">
+            <div class="rigging-cable cable-left"></div>
+            <div class="rigging-cable cable-center-left"></div>
+            <div class="rigging-cable cable-center-right"></div>
+            <div class="rigging-cable cable-right"></div>
+            <div class="rigging-truss-bar"></div>
+          </div>
+
+          <!-- ビジョンフレーム -->
+          <div class="jumbotron-frame">
+            <!-- ステータスバー -->
+            <div class="jumbotron-top-bar">
+              <div class="vision-status">
+                <span class="status-indicator-dot"></span>
+                <span class="vision-id">ARENA CENTER-HUNG JUMBOTRON // FEED-01</span>
+              </div>
+              <div class="vision-meta">
+                <span class="meta-tag">DIRECT FEED</span>
+              </div>
+            </div>
+
+            <!-- スクリーンエリア -->
+            <div class="jumbotron-screen-wrap" id="jumbotronScreen" style="border:none; background:none;">
+              <div class="coming-soon-cinema-card" style="border-radius:18px;">
+                <div class="cs-cinema-icon-wrap">
+                  <i data-lucide="clapperboard"></i>
+                </div>
+                <span class="cs-cinema-badge">OFFICIAL MOVIE · COMING SOON</span>
+                <h3 class="cs-cinema-title" style="font-size:2.2rem;">公式プロモーション映像</h3>
+                <div class="cs-cinema-status" style="font-size:1.25rem;">【 現在制作・準備中 】</div>
+                <p class="cs-cinema-desc" style="font-size:1.05rem;">大会当日の白熱した模様と熱気を凝縮した公式オープニングPVを準備しています。<br>映像の公開まで、今しばらくお待ちください！</p>
+                <span class="cs-cinema-tag">RE:CREATION 2026 OFFICIAL PROMOTIONAL VIDEO</span>
+              </div>
+            </div>
+
+            <!-- コーナー装飾 -->
+            <div class="corner-bracket corner-tl"></div>
+            <div class="corner-bracket corner-tr"></div>
+            <div class="corner-bracket corner-bl"></div>
+            <div class="corner-bracket corner-br"></div>
+          </div>
+
+          <!-- ビジョン下部のアリーナ床面アンビエント反射グロー -->
+          <div class="jumbotron-ambient-glow" id="jumbotronAmbientGlow"></div>
+        </div>
+      </section>
+
+    </main>
+
+    <site-footer></site-footer>
+
+  </div> <!--container-->
+
+  <script>if(window.lucide){lucide.createIcons();}</script>
+</body>
+
+<script src="js/jQuery-v3.7.1.js?v=20261022_rev3"></script>
+<script src="js/script.js?v=20261022_rev3"></script>
+
+</html>

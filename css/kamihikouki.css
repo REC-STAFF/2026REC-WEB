@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+/* =========================================================
+   紙飛行機専用スタイル (kamihikouki.css)
+   共通レイアウト・タイトル・枠線・詳細ブロックは common.css に集約済み
+   ========================================================= */
+
+.kamihikouki-img {
+  /* background-image removed for preparation */
+}
+
+.kamihikoukibasyo-img {
+  /* background-image removed for preparation */
+}

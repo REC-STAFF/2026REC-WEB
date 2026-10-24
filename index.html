@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/common.css?v=20261022_rev3">
+  <link rel="stylesheet" href="css/index.css?v=20261022_rev3">
+  <title>トップ | RE:CREATION 2026</title>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="js/components.js?v=20261022_rev3"></script>
+</head>
+
+<body>
+
+<div id="container">
+    <site-header></site-header>
+
+    <!-- ヒーローステージ（タイトル画面） -->
+    <section class="hero-stage">
+      <!-- ホームページ上部専用 魚のうろこレイヤー -->
+      <div class="hero-uroko-layer"></div>
+
+      <!-- ヒーロー背景ランナーピクトグラム（ウォーターマーク） -->
+      <div class="hero-watermark-pictogram">
+        <img src="images/pictogram_white.png" alt="" loading="lazy">
+      </div>
+
+      <div class="hero-content">
+        <div class="hero-meta-badges">
+          <div class="hero-pill hero-pill-graphic hero-date-pill">
+            <i data-lucide="calendar" class="badge-icon"></i>
+            <img src="images/hero-img-mo-date-2026-crop.png" alt="11/7 Fr. 10:00-15:40" class="hero-meta-img meta-date-img">
+          </div>
+          <div class="hero-pill pill-venue hero-pill-graphic hero-place-pill">
+            <i data-lucide="map-pin" class="badge-icon"></i>
+            <img src="images/hero-img-place-2026-crop.png" alt="金城ふ頭特設アリーナ" class="hero-meta-img meta-place-img">
+          </div>
+        </div>
+
+        <div class="hero-title-box dev-trigger-target" style="cursor:pointer;" role="button" tabindex="0" title="3回タップで隠しゲーム起動" aria-label="3回タップで隠しゲーム起動">
+          <img class="hero-title-img" src="images/hero-img-mo-title-2026.png" alt="RE:CREATION 2026" decoding="async">
+        </div>
+
+        <p class="hero-tagline">CREATE THE UNFORGETTABLE MOMENTS</p>
+
+        <!-- 4大クイックアクセス・ショートカットボタン -->
+        <div class="hero-quick-actions">
+          <a href="sennsyu.html" class="hero-action-btn">
+            <div class="btn-icon-wrap">
+              <img src="images/book_white.png" alt="名簿アイコン" class="btn-custom-icon icon-default">
+              <img src="images/book_navy.png" alt="名簿アイコン" class="btn-custom-icon icon-hover">
+            </div>
+            <span class="btn-label">出場選手名簿</span>
+            <span class="btn-hint">全60クラス名簿PDF</span>
+          </a>
+
+          <a href="#categories-section" class="hero-action-btn" id="btnScrollKyougi">
+            <div class="btn-icon-wrap">
+              <img src="images/pictogram_white.png" alt="競技アイコン" class="btn-custom-icon icon-default">
+              <img src="images/pictogram_navy.png" alt="競技アイコン" class="btn-custom-icon icon-hover">
+            </div>
+            <span class="btn-label">競技ルール一覧</span>
+            <span class="btn-hint">全5種目＆対戦表</span>
+          </a>
+
+          <a href="ranking.html" class="hero-action-btn">
+            <div class="btn-icon-wrap">
+              <img src="images/crown_white.png" alt="ランキングアイコン" class="btn-custom-icon icon-default">
+              <img src="images/crown_navy.png" alt="ランキングアイコン" class="btn-custom-icon icon-hover">
+            </div>
+            <span class="btn-label">総合ランキング</span>
+            <span class="btn-hint">得点上位10位速報</span>
+          </a>
+
+          <a href="situmonn.html" class="hero-action-btn">
+            <div class="btn-icon-wrap">
+              <img src="images/q_and_a_white.png" alt="Q&Aアイコン" class="btn-custom-icon icon-default">
+              <img src="images/q_and_a_navy.png" alt="Q&Aアイコン" class="btn-custom-icon icon-hover">
+            </div>
+            <span class="btn-label">よくある質問</span>
+            <span class="btn-hint">Q&amp;A・当日の疑問解決</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <main id="main-content" class="main-wrapper">
+
+      <!-- 開催方針 & レ・クリエイションとは -->
+      <section class="feature-grid">
+
+        <div class="glass-card feature-card">
+                    <h2><i data-lucide="compass" style="width: 28px; height: 28px; color: var(--color-accent);"></i> 開催方針</h2>
+          <p>
+            レ・クリエイションの活動によって、学生間および学生が教官との活発なコミュニケーションをはかり、アイデア溢れる行事内容の目標達成に向けて主体性を持って取り組み、<strong>”統率力・協調性”</strong>を養うことを目的とする。
+          </p>
+        </div>
+
+        <div class="glass-card feature-card">
+                    <h2><i data-lucide="sparkles" style="width: 28px; height: 28px; color: var(--color-accent);"></i> レ・クリエイションとは</h2>
+          <p>
+            独創的かつ創造的な活動を意味するフランス語である。全学生が同じ企画・目標に向け活動することにより、さまざまなアイデアを出し合い、創意工夫しコミュニケーションを活性化させることを目的としている。<br>
+            行事の企画については、担当教官や各クラスの委員の指導のもと十分吟味のうえ、学びの多いものになるよう工夫すること。
+          </p>
+        </div>
+
+      </section>
+
+
+      <!-- NEWS SECTION (QUEST LOG // 最新情報) -->
+      <section class="glass-card news-container">
+                <div class="news-list">
+
+          <!-- お知らせ -->
+          <div class="news-item news-item-static">
+            <span class="news-tag">NEW</span>
+            <p class="news-text">WEBサイトオープンしました！</p>
+          </div>
+
+          <!-- 競技一覧へのリンク -->
+          <a href="kyougi.html" class="news-item news-item-link">
+            <span class="news-tag">NEW</span>
+            <p class="news-text">競技に関する詳細が公開されました！</p>
+            <i data-lucide="arrow-right" class="news-arrow-icon" style="width: 18px; height: 18px;"></i>
+          </a>
+
+          <!-- 出場選手ページへのリンク -->
+          <a href="sennsyu.html" class="news-item news-item-link">
+            <span class="news-tag">UPDATE</span>
+            <p class="news-text">出場選手のページを更新しました！</p>
+            <i data-lucide="arrow-right" class="news-arrow-icon" style="width: 18px; height: 18px;"></i>
+          </a>
+
+        </div>
+      </section>
+
+
+      <!-- BANNER (Calling App Showcase) -->
+      <section class="glass-card app-banner-card">
+        <div class="app-banner-info">
+          <h3><i data-lucide="bell" style="width: 24px; height: 24px; vertical-align: -3px; margin-right: 6px; color: var(--color-accent);"></i> 呼び出しアプリのご案内</h3>
+          <p>当日の競技招集や進行アナウンスをリアルタイムで通知する呼び出しアプリの活用ガイドです。選手および応援団の皆様は事前にご確認ください。</p>
+          <div>
+            <a href="appli.html" class="btn-arcade">アプリ案内を見る →</a>
+          </div>
+        </div>
+        <div class="app-banner-img-box" style="border:none; background:none; box-shadow:none;">
+          <a href="appli.html" class="app-banner-prep-card">
+            <span class="app-prep-badge">2026 OFFICIAL APP</span>
+            <div class="app-prep-icon">
+              <i data-lucide="smartphone"></i>
+            </div>
+            <h4 class="app-prep-title">呼び出しアプリ</h4>
+            <div class="app-prep-status">【 現在準備中 】</div>
+            <p class="app-prep-desc">当日の競技招集・進行アナウンスをリアルタイム通知！<br>大会直前に最新版を公開予定です。</p>
+            <span class="app-prep-btn">詳細ガイド・使い方を見る →</span>
+          </a>
+        </div>
+      </section>
+
+
+      <!-- OFFICIAL MOVIE (Cinema Theater Mode) -->
+      <section id="movie-section" class="movie-section">
+        <h2 class="section-heading"><i data-lucide="film" style="width: 32px; height: 32px; vertical-align: -5px; margin-right: 8px; color: var(--color-accent);"></i> 公式ムービー</h2>
+        <p class="section-subheading">OFFICIAL PROMOTIONAL VIDEO</p>
+
+        <div class="movie-theater-frame">
+          <div class="coming-soon-cinema-card">
+            <div class="cs-cinema-icon-wrap">
+              <i data-lucide="clapperboard"></i>
+            </div>
+            <span class="cs-cinema-badge">OFFICIAL MOVIE · COMING SOON</span>
+            <h3 class="cs-cinema-title">公式プロモーション映像</h3>
+            <div class="cs-cinema-status">【 現在制作・準備中 】</div>
+            <p class="cs-cinema-desc">大会当日の熱気を凝縮した公式オープニングPVを準備しています。<br>映像の公開まで、今しばらくお待ちください！</p>
+            <span class="cs-cinema-tag">RE:CREATION 2026 OFFICIAL PV</span>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- 当日の詳細 (6大コンテンツ アイコングリッド) -->
+      <section id="categories-section" class="categories-section">
+        <h2 class="section-heading"><i data-lucide="zap" style="width: 32px; height: 32px; vertical-align: -5px; margin-right: 8px; color: var(--color-accent);"></i> 当日の詳細</h2>
+        <p class="section-subheading">EVENT CONTENTS & GUIDES</p>
+
+        <div class="categories-grid">
+
+          <a href="./sennsyu.html" class="glass-card category-card">
+            <div class="cat-header">
+              <span class="cat-icon-wrap"><img src="images/book_white.png" alt="" class="cat-custom-icon"></span>
+              <h3 class="cat-title">出場選手</h3>
+            </div>
+            <p class="cat-desc">各競技に出場する全クラスの選手名簿PDFを掲載しています。</p>
+            <div class="cat-action">詳細を見る <span>→</span></div>
+          </a>
+
+          <a href="./kyougi.html" class="glass-card category-card">
+            <div class="cat-header">
+              <span class="cat-icon-wrap"><img src="images/trophy-white.png" alt="" class="cat-custom-icon"></span>
+              <h3 class="cat-title">競技一覧 <span style="font-size:0.72rem; color:#FFA502; border:1px solid #FFA502; background:rgba(255,165,2,0.15); padding:2px 8px; border-radius:10px; margin-left:6px; font-weight:800; vertical-align:2px;">準備中</span></h3>
+            </div>
+            <p class="cat-desc">2026年度に実施される全競技のルールおよび対戦表は、種目決定次第順次公開いたします。</p>
+            <div class="cat-action">詳細を見る <span>→</span></div>
+          </a>
+
+          <a href="./basyo.html" class="glass-card category-card">
+            <div class="cat-header">
+              <span class="cat-icon-wrap"><img src="images/map-pin-white.png" alt="" class="cat-custom-icon"></span>
+              <h3 class="cat-title">集合場所</h3>
+            </div>
+            <p class="cat-desc">体育館内の各クラス待機場所、集合場所、座席配置図をご確認いただけます。</p>
+            <div class="cat-action">詳細を見る <span>→</span></div>
+          </a>
+
+          <a href="./cosplay.html" class="glass-card category-card">
+            <div class="cat-header">
+              <span class="cat-icon-wrap"><img src="images/cosplay-white.png" alt="" class="cat-custom-icon"></span>
+              <h3 class="cat-title">コスプレ大会</h3>
+            </div>
+            <p class="cat-desc">コスプレ大会のエントリー出場者一覧・ルール・審査基準を掲載しています。</p>
+            <div class="cat-action">詳細を見る <span>→</span></div>
+          </a>
+
+          <a href="./ranking.html" class="glass-card category-card">
+            <div class="cat-header">
+              <span class="cat-icon-wrap"><img src="images/crown_white.png" alt="" class="cat-custom-icon"></span>
+              <h3 class="cat-title">ランキング</h3>
+            </div>
+            <p class="cat-desc">現時点での総合得点上位10位のクラス別ハイスコアを掲載しています。</p>
+            <div class="cat-action">詳細を見る <span>→</span></div>
+          </a>
+
+          <a href="./cyuui.html" class="glass-card category-card">
+            <div class="cat-header">
+              <span class="cat-icon-wrap"><img src="images/warning-white.png" alt="" class="cat-custom-icon"></span>
+              <h3 class="cat-title">注意事項</h3>
+            </div>
+            <p class="cat-desc">安全かつ円滑なイベント運営のための観戦ルール・禁止事項・注意事項です。</p>
+            <div class="cat-action">詳細を見る <span>→</span></div>
+          </a>
+
+        </div>
+      </section>
+
+
+      <!-- SCHEDULE SECTION -->
+      <section id="schedule-section" class="schedule-section">
+        <h2 class="section-heading"><i data-lucide="calendar" style="width: 32px; height: 32px; vertical-align: -5px; margin-right: 8px; color: var(--color-accent);"></i> スケジュール</h2>
+        <p class="section-subheading">EVENT TIMETABLE</p>
+
+        <div class="cs-placeholder-card">
+          <div class="cs-icon-pod">
+            <i data-lucide="clock"></i>
+          </div>
+          <h4 class="cs-title">EVENT TIMETABLE - 現在準備中</h4>
+          <p class="cs-desc">2026年度 レクリエーション大会の当日のタイムスケジュール・競技進行順は、現在実行委員会にて最終調整中です。確定次第公開いたします。</p>
+          <span class="cs-badge">STATUS: COMING SOON</span>
+        </div>
+      </section>
+
+
+      <!-- ACCESS & VENUE MAP -->
+      <section id="access-section" class="access-section">
+        <h2 class="section-heading"><i data-lucide="map" style="width: 32px; height: 32px; vertical-align: -5px; margin-right: 8px; color: var(--color-accent);"></i> 会場アクセス</h2>
+        <p class="section-subheading">LOCATION & DIRECTIONS</p>
+
+        <div class="access-split">
+
+          <div class="map-frame">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3266.398686008778!2d136.84883347627448!3d35.04675546454707!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037c35eb8a1f8b%3A0x6b24d7764d930211!2z5q2m55Sw44OG44OQ44Kq44O844K344Of44Oz44Ki44Oq44O844OK!5e0!3m2!1sja!2sjp!4v1710000000000!5m2!1sja!2sjp"
+              style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+
+          <div class="glass-card access-details">
+            <h3>金城ふ頭特設アリーナ</h3>
+            <p>
+              <strong>武田テバオーシャンアリーナ</strong><br>
+              〒455-0848 愛知県名古屋市港区金城ふ頭2丁目7-1
+            </p>
+            <p>
+              <strong>電車でのアクセス:</strong><br>
+              あおなみ線 <strong>「金城ふ頭駅」</strong> 下車<br>
+              改札口より <strong>徒歩1分</strong>
+            </p>
+            <button type="button" class="btn-arcade copy-address-btn"><i data-lucide="copy" style="width: 16px; height: 16px; vertical-align: -2px; margin-right: 4px;"></i> 住所をコピー</button>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+
+    <!-- FLOATING BACK TO TOP BUTTON -->
+    <site-footer></site-footer>
+
+  </div> <!--container-->
+
+  <script src="js/jQuery-v3.7.1.js?v=20261022_rev3"></script>
+  <script src="js/script.js?v=20261022_rev3"></script>
+  <script>
+    if (window.lucide) {
+      lucide.createIcons();
+    }
+  </script>
+
+</body>
+
+</html>
