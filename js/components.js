@@ -12,8 +12,9 @@
   // 現在のページ名を判定
   function getCurrentPage() {
     const path = window.location.pathname.replace(/\/+$/, '');
-    const page = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
-    return decodeURIComponent(page).toLowerCase();
+    const page = decodeURIComponent(path.substring(path.lastIndexOf('/') + 1)).toLowerCase();
+    if (!page || page === 'index') return 'index.html';
+    return page.endsWith('.html') ? page : `${page}.html`;
   }
 
   // 競技詳細サブページかどうか
