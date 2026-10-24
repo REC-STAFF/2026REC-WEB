@@ -1344,6 +1344,20 @@ a.glass-card:hover {
   border-radius: 12px;
 }
 
+.competition-img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #082F49;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.competition-img-placeholder p {
+  margin: 0;
+  text-align: center;
+}
+
 .cs-icon-pod {
   width: 64px;
   height: 64px;

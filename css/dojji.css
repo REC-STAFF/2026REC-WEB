@@ -9,6 +9,20 @@
   /* background-image removed for preparation */
 }
 
+.dojji-img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #082F49;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.dojji-img-placeholder p {
+  margin: 0;
+  text-align: center;
+}
+
 .dojjibasyo-img {
   /* background-image removed for preparation */
 }
