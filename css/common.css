@@ -1344,6 +1344,14 @@ a.glass-card:hover {
   border-radius: 12px;
 }
 
+@media screen and (max-width: 768px) {
+  .schedule-img {
+    width: 100%;
+    max-width: none;
+    border-radius: 8px;
+  }
+}
+
 .competition-img-placeholder {
   display: flex;
   align-items: center;

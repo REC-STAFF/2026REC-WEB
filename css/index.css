@@ -181,6 +181,7 @@
   width: 100%;
   max-width: 100%;
   height: auto;
+  pointer-events: none;
   object-fit: contain;
   filter: drop-shadow(0 14px 40px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 35px rgba(254, 200, 56, 0.35));
   animation: titleFloatInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) both;
@@ -546,6 +547,25 @@
   flex-direction: column;
   gap: 1.2rem;
   margin-top: 1rem;
+  max-height: 270px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
+  scrollbar-color: rgba(56, 182, 240, 0.75) rgba(255, 255, 255, 0.08);
+  scrollbar-width: thin;
+}
+
+.news-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.news-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+}
+
+.news-list::-webkit-scrollbar-thumb {
+  background: rgba(56, 182, 240, 0.75);
+  border-radius: 999px;
 }
 
 .news-item {
@@ -598,6 +618,19 @@
   color: #FFFFFF;
   flex-grow: 1;
   text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+.news-date {
+  flex-shrink: 0;
+  padding: 5px 10px;
+  border: 1px solid rgba(56, 182, 240, 0.4);
+  border-radius: 8px;
+  color: #B9DDF2;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  background: rgba(56, 182, 240, 0.1);
 }
 
 .news-arrow,
@@ -893,6 +926,14 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
 }
 
+@media screen and (max-width: 768px) {
+  .schedule-img {
+    width: 100%;
+    max-width: none;
+    border-radius: 8px;
+  }
+}
+
 .access-split {
   display: grid;
   grid-template-columns: 1.1fr 0.9fr;
@@ -975,6 +1016,14 @@
 }
 
 @media screen and (max-width: 680px) {
+  h2.section-heading {
+    font-size: 1.9rem;
+  }
+
+  .access-details h3 {
+    font-size: 1.8rem;
+  }
+
   .hero-stage {
     padding: 85px 12px 40px;
   }
@@ -1201,6 +1250,16 @@
     text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   }
 
+  .news-list {
+    max-height: 185px;
+    padding-right: 0.35rem;
+  }
+
+  .news-date {
+    padding: 3px 6px;
+    font-size: 0.68rem;
+  }
+
   .map-frame {
     height: 240px;
     border-radius: 16px;
@@ -1338,7 +1397,7 @@
   }
 
   .app-banner-info h3 {
-    font-size: 1.35rem !important;
+    font-size: 1.2rem !important;
     line-height: 1.4 !important;
     word-break: break-word !important;
     overflow-wrap: anywhere !important;
