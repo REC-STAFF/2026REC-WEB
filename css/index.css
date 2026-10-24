@@ -1533,6 +1533,67 @@
   color: #6C8E9E;
 }
 
+@media screen and (max-width: 768px) {
+  .coming-soon-cinema-card {
+    padding: 0.8rem 0.7rem;
+    border-radius: 12px;
+  }
+
+  .coming-soon-cinema-card .cs-cinema-icon-wrap {
+    width: 44px;
+    height: 44px;
+    margin-bottom: 0.45rem;
+  }
+
+  .coming-soon-cinema-card .cs-cinema-icon-wrap i,
+  .coming-soon-cinema-card .cs-cinema-icon-wrap svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .coming-soon-cinema-card .cs-cinema-badge {
+    max-width: 100%;
+    padding: 3px 7px;
+    margin-bottom: 0.35rem;
+    font-size: 0.55rem;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+
+  .coming-soon-cinema-card .cs-cinema-title {
+    max-width: 100%;
+    margin-bottom: 0.2rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.03em;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+
+  .coming-soon-cinema-card .cs-cinema-status {
+    margin-bottom: 0.35rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    line-height: 1.3;
+  }
+
+  .coming-soon-cinema-card .cs-cinema-desc {
+    max-width: 100%;
+    margin-bottom: 0.35rem;
+    font-size: 0.68rem;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
+  }
+
+  .coming-soon-cinema-card .cs-cinema-tag {
+    max-width: 100%;
+    font-size: 0.48rem;
+    letter-spacing: 0.04em;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+    text-align: center;
+  }
+}
+
 /* 呼び出しアプリ 準備中カード */
 .app-banner-prep-card {
   display: flex;
