@@ -11,9 +11,9 @@
 
   // 現在のページ名を判定
   function getCurrentPage() {
-    const path = window.location.pathname;
+    const path = window.location.pathname.replace(/\/+$/, '');
     const page = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
-    return page.toLowerCase();
+    return decodeURIComponent(page).toLowerCase();
   }
 
   // 競技詳細サブページかどうか
@@ -71,7 +71,7 @@
 
       const desktopNavHtml = desktopLinks.map(link => {
         const isActive = (curPage === link.key) || (link.matchSub && isSub);
-        return `<li><a href="${link.href}"${isActive ? ' class="active"' : ''}>${link.label}</a></li>`;
+        return `<li><a href="${link.href}"${isActive ? ' class="active" aria-current="page"' : ''}>${link.label}</a></li>`;
       }).join('\n            ');
 
       // モバイルドロワーのリンク定義
@@ -91,7 +91,7 @@
 
       const drawerNavHtml = drawerLinks.map(link => {
         const isActive = (curPage === link.key) || (link.matchSub && isSub);
-        return `<li><a href="${link.href}"${isActive ? ' class="active"' : ''}><span><i data-lucide="${link.icon}"></i> ${link.label}</span> <i data-lucide="chevron-right"></i></a></li>`;
+        return `<li><a href="${link.href}"${isActive ? ' class="active" aria-current="page"' : ''}><span><i data-lucide="${link.icon}"></i> ${link.label}</span> <i data-lucide="chevron-right"></i></a></li>`;
       }).join('\n        ');
 
       this.innerHTML = `
