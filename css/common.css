@@ -1040,7 +1040,7 @@ a.glass-card:hover {
 
 /* 共通タイトルステージ（半透明フロストガラスカード） */
 .dojji-title, .relay-title, .tunahiki-title, .kamihikouki-title, .ninnkyaku-title,
-.kyougi-title-box, .basyo-title-box, .cyuui-title-box, .situmonn-title-box,
+.kyougi-title-box, .basyo-title-box, .cyuui-title-box, .caution-title, .situmonn-title-box,
 .photospot-title-box, .appli-title-box {
   text-align: center;
   background: rgba(255, 255, 255, 0.16);
@@ -1054,7 +1054,7 @@ a.glass-card:hover {
 }
 
 .dojji-title h2, .relay-title h2, .tunahiki-title h2, .kamihikouki-title h2, .ninnkyaku-title h2,
-.kyougi-title, .basyo-title h2, .cyuui-title h2, .situmonn-title h2, .photospot-title, .appli-title h2 {
+.kyougi-title, .basyo-title h2, .cyuui-title h2, .caution-title h2, .situmonn-title h2, .photospot-title, .appli-title h2 {
   color: #FFFFFF;
   font-size: clamp(2.4rem, 5.2vw, 3.8rem);
   font-weight: 900;
@@ -1222,7 +1222,7 @@ a.glass-card:hover {
   }
 
   .dojji-title, .relay-title, .tunahiki-title, .kamihikouki-title, .ninnkyaku-title,
-  .kyougi-title-box, .basyo-title-box, .cyuui-title-box, .situmonn-title-box,
+  .kyougi-title-box, .basyo-title-box, .cyuui-title-box, .caution-title, .situmonn-title-box,
   .photospot-title-box, .appli-title-box {
     padding: 1.6rem 1.0rem;
     margin-bottom: 2rem;
@@ -1233,7 +1233,7 @@ a.glass-card:hover {
   }
 
   .dojji-title h2, .relay-title h2, .tunahiki-title h2, .kamihikouki-title h2, .ninnkyaku-title h2,
-  .kyougi-title, .basyo-title h2, .cyuui-title h2, .situmonn-title h2, .photospot-title, .appli-title h2 {
+  .kyougi-title, .basyo-title h2, .cyuui-title h2, .caution-title h2, .situmonn-title h2, .photospot-title, .appli-title h2 {
     font-size: clamp(1.5rem, 5.5vw, 1.8rem);
   }
 
