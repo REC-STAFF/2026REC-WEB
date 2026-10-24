@@ -152,6 +152,24 @@ body, body.page-cosplay {
   margin: 0;
 }
 
+.cos-highlight {
+  display: inline;
+  padding: 0.1em 0.35em;
+  border-radius: 0.3em;
+  background: linear-gradient(135deg, #FEC838 0%, #FFD96A 100%);
+  color: #082F49;
+  font-weight: 900;
+  box-shadow: 0 2px 8px rgba(254, 200, 56, 0.28);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.cos-important {
+  color: #7DE3FF;
+  font-weight: 900;
+  text-shadow: 0 0 10px rgba(56, 182, 240, 0.35);
+}
+
 /* =========================================================
    3. 審査リスト（ラベルをピルバッジ化して可読性大幅向上）
    ========================================================= */
