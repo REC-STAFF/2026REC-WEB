@@ -93,7 +93,7 @@ $(function () {
   // 4. Copy Address to Clipboard
   // ========================================================
   $(".copy-address-btn").on("click", function () {
-    var addressText = "〒455-0848 愛知県名古屋市港区金城ふ頭2丁目7-1 武田テバオーシャンアリーナ";
+    var addressText = "〒455-0848 愛知県名古屋市港区金城ふ頭2丁目7-1 名古屋金城ふ頭アリーナ";
     if (navigator.clipboard) {
       navigator.clipboard.writeText(addressText).then(function () {
         var $btn = $(".copy-address-btn");
