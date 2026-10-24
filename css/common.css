@@ -1336,11 +1336,11 @@ a.glass-card:hover {
 
 .schedule-img {
   display: block;
-  width: 100%;
-  max-width: 1670px;
+  width: 80%;
+  max-width: 1200px;
   height: auto;
   min-height: 0;
-  margin: 0;
+  margin: 0 auto 2rem;
   border-radius: 12px;
 }
 
