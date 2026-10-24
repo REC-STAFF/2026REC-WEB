@@ -1334,6 +1334,16 @@ a.glass-card:hover {
   transform: translateY(-3px);
 }
 
+.schedule-img {
+  display: block;
+  width: 100%;
+  max-width: 1670px;
+  height: auto;
+  min-height: 0;
+  margin: 0;
+  border-radius: 12px;
+}
+
 .cs-icon-pod {
   width: 64px;
   height: 64px;

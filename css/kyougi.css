@@ -5,10 +5,6 @@
    共通レイアウト・タイトル・枠線は common.css に集約済み
    ========================================================= */
 
-.schedule-img {
-  /* background-image removed for preparation */
-}
-
 .info-section {
   width: 100%;
   margin: auto;
