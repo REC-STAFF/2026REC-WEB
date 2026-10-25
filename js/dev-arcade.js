@@ -10,6 +10,7 @@
  * =========================================================
  */
 (function () {
+/*
   let overlayEl = null;
 
   function createArcadeDom() {
@@ -144,4 +145,5 @@
   window.closeDevArcade = closeDevArcade;
 
   openDevArcade();
+*/
 })();
