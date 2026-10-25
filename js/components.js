@@ -104,7 +104,7 @@
           <a href="index.html">
             <img src="images/title-text1.png" alt="RE:CREATION">
           </a>
-          <span class="brand-badge dev-trigger-target" role="button" tabindex="0" title="ダブルクリックで宇宙艦隊3D / 3タップでアクション起動" aria-label="3回タップで隠しゲーム起動">2026</span>
+          <span class="brand-badge">2026</span>
         </div>
 
         <nav class="desktop-nav">
@@ -220,7 +220,7 @@
           <a href="situmonn.html">Q&A</a>
           <a href="movie.html">ムービー</a>
         </nav>
-        <p class="footer-copy">© <span class="brand-badge dev-trigger-target" role="button" tabindex="0" style="cursor:pointer;" title="ダブルクリックで宇宙艦隊3D / 3タップでアクション起動" aria-label="3回タップで隠しゲーム起動">2026</span> RE:CREATION STAFF. ALL RIGHTS RESERVED.</p>
+        <p class="footer-copy">© <span class="brand-badge">2026</span> RE:CREATION STAFF. ALL RIGHTS RESERVED.</p>
       </div>
     </footer>
       `;

@@ -260,12 +260,13 @@
       ※スマホがモバイル通信（4G/5G）の場合はPCに接続できませんので、Wi-FiをONにしてください。
     </div>
 
-        <!-- プレビュー対象切り替えタブ (URLに ?dev=1 がある時、またはヘッダー5回タップで表示) -->
+    <!-- 無効化済み: 隠しゲーム切替タブ
     <div class="mode-switcher" id="secret-mode-switcher" style="display: none;">
       <button type="button" class="mode-btn" id="btn-mode-stellar" onclick="switchMode('stellar')">🚀 宇宙艦隊3D</button>
       <button type="button" class="mode-btn" id="btn-mode-blood" onclick="switchMode('blood')">🩸 アクション</button>
       <button type="button" class="mode-btn active" id="btn-mode-site" onclick="switchMode('site')">🌐 サイト全体</button>
     </div>
+    -->
 
     <!-- オフライン生成対応QRコードコンテナ -->
     <div class="qr-container">
@@ -344,32 +345,10 @@
       }
     }
 
-    var currentMode = 'site';
-    try {
-      var p = new URLSearchParams(window.location.search);
-      if (p.get('mode')) currentMode = p.get('mode');
-    } catch(e) {}
-
-    function switchMode(mode) {
-      currentMode = mode;
-      ['stellar', 'blood', 'site'].forEach(function(m) {
-        var el = document.getElementById('btn-mode-' + m);
-        if (el) el.classList.toggle('active', mode === m);
-      });
-      updateUrlDisplay(currentIp);
-    }
-
     function updateUrlDisplay(ip) {
       currentIp = ip;
       var path = '/index.html';
       var btnLabel = 'PCブラウザでサイトを開く';
-      if (currentMode === 'stellar') {
-        path = '/js/engine/stellar-command.html';
-        btnLabel = 'PCブラウザでSTELLAR COMMAND出撃';
-      } else if (currentMode === 'blood') {
-        path = '/js/engine/blood-pressure.html';
-        btnLabel = 'PCブラウザでBLOOD PRESSURE起動';
-      }
       var targetUrl = 'http://' + ip + ':' + port + path;
 
       document.getElementById('share-url').textContent = targetUrl;
@@ -424,7 +403,7 @@
         // オフライン・file:/// 時はデフォルトIPでそのまま維持
       });
   
-    // 隠しモード解禁ギミック（タイトル3回タップで宇宙/アクション選択ボタンが表示される）
+    /* 無効化済み: 隠しモード解禁ギミック
     let secretTapCount = 0;
     let secretTapTimer = null;
     const shareLogo = document.getElementById('share-logo-title');
@@ -443,6 +422,7 @@
         }
       });
     }
+    */
 
 </script>
 
