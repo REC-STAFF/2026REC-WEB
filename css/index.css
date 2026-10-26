@@ -609,6 +609,12 @@
   flex-shrink: 0;
 }
 
+/* 重要なお知らせ：タグのみ赤色で強調 */
+.news-tag-important {
+  background: #FF5C5C;
+  color: #FFFFFF;
+}
+
 .news-text {
   font-size: 1.2rem;
   word-break: break-word;
