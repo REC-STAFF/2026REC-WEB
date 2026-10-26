@@ -1,5 +1,6 @@
 @charset "utf-8";
 
+html.welcome-poster-open,
 body.welcome-poster-open {
   overflow: hidden;
 }

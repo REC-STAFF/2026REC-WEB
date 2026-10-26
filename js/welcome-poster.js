@@ -59,6 +59,7 @@
       rememberShown();
       overlay.classList.remove("is-visible");
       overlay.classList.add("is-closing");
+      document.documentElement.classList.remove("welcome-poster-open");
       document.body.classList.remove("welcome-poster-open");
       document.removeEventListener("keydown", handleKeydown);
 
@@ -96,6 +97,7 @@
     document.addEventListener("keydown", handleKeydown);
 
     document.body.appendChild(overlay);
+    document.documentElement.classList.add("welcome-poster-open");
     document.body.classList.add("welcome-poster-open");
 
     window.requestAnimationFrame(function () {
