@@ -67,7 +67,9 @@
         { href: 'basyo.html', label: '集合場所', key: 'basyo.html' },
         { href: 'cosplay.html', label: 'コスプレ大会', key: 'cosplay.html' },
         { href: 'photospot.html', label: 'フォトスポット', key: 'photospot.html' },
-        { href: 'ranking.html', label: 'ランキング', key: 'ranking.html' }
+        { href: 'ranking.html', label: 'ランキング', key: 'ranking.html' },
+        { href: 'cyuui.html', label: '注意事項', key: 'cyuui.html' },
+        { href: 'index.html#access-section', label: '会場アクセス', key: 'access-section' }
       ];
 
       const desktopNavHtml = desktopLinks.map(link => {
@@ -87,7 +89,8 @@
         { href: 'appli.html', label: '呼び出しアプリ', icon: 'bell', key: 'appli.html' },
         { href: 'cyuui.html', label: '注意事項', icon: 'shield-alert', key: 'cyuui.html' },
         { href: 'situmonn.html', label: 'Q&A (よくある質問)', icon: 'help-circle', key: 'situmonn.html' },
-        { href: 'movie.html', label: 'ムービー紹介', icon: 'film', key: 'movie.html' }
+        { href: 'movie.html', label: 'ムービー紹介', icon: 'film', key: 'movie.html' },
+        { href: 'index.html#access-section', label: '会場アクセス', icon: 'map-pin', key: 'access-section' }
       ];
 
       const drawerNavHtml = drawerLinks.map(link => {
