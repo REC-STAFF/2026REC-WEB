@@ -35,11 +35,17 @@
           <span>レクリエーション開催！</span>
         </h1>
         <div class="welcome-poster__image-wrap">
-          <img
-            class="welcome-poster__image"
-            src="images/recreation-poster-2026.jpg"
-            alt="RE:CREATION 2026 開催ポスター。11月27日金曜日、金城ふ頭アリーナ、9時30分から16時まで。"
-          >
+          <picture>
+            <source
+              media="(max-width: 680px)"
+              srcset="images/recreation-poster-2026-smartphone.jpg"
+            >
+            <img
+              class="welcome-poster__image"
+              src="images/recreation-poster-2026.jpg"
+              alt="RE:CREATION 2026 開催ポスター。11月27日金曜日、金城ふ頭アリーナ、9時30分から16時まで。"
+            >
+          </picture>
         </div>
         <div class="welcome-poster__actions">
           <button type="button" class="welcome-poster__enter">サイトを見る</button>
