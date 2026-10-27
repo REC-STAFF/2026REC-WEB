@@ -145,7 +145,7 @@ $(function () {
   const isMobile = window.innerWidth < 768;
   const isEcoUser = localStorage.getItem('rec_bg_mode') === 'eco';
 
-  if (isMobile || isEcoUser) {
+  if (isEcoUser) {
     document.body.classList.add('bg-static-arena');
     return; // 完全固定60fpsの超軽量モードで動作
   }
