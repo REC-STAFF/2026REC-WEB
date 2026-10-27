@@ -3,9 +3,9 @@
  * 【ボタン以外は静的・高品位】＆【3Dアリーナ光柱 Canvas】
  */
 
-$(function () {
+function initializePageInteractions() {
   // ========================================================
-  // 1. Mobile Drawer Navigation (Vanilla JS + jQuery Hybrid for 100% Reliability)
+  // 1. Mobile Drawer Navigation
   // ========================================================
   function setupMobileDrawer() {
     const drawer = document.querySelector(".mobile-nav-drawer");
@@ -58,66 +58,71 @@ $(function () {
   // ========================================================
   // 2. Smooth Scroll for Navigation and Action Buttons
   // ========================================================
-  $('a[href^="#"]').on("click", function (e) {
-    var href = $(this).attr("href");
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener("click", function (e) {
+    var href = link.getAttribute("href");
     if (href === "#" || href === "") return;
-    var $target = $(href);
-    if ($target.length) {
+    var target = document.querySelector(href);
+    if (target) {
       e.preventDefault();
       var headerOffset = 64;
-      var targetPosition = $target.offset().top - headerOffset;
+      var targetPosition = target.getBoundingClientRect().top + window.scrollY - headerOffset;
       window.scrollTo({
         top: targetPosition,
         behavior: "smooth"
       });
     }
+    });
   });
 
   // ========================================================
   // 3. Back to Top Button
   // ========================================================
-  var $backToTop = $("#backToTop");
-  $(window).on("scroll", function () {
-    if ($(this).scrollTop() > 300) {
-      $backToTop.addClass("show");
+  var backToTop = document.getElementById("backToTop");
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 300) {
+      backToTop?.classList.add("show");
     } else {
-      $backToTop.removeClass("show");
+      backToTop?.classList.remove("show");
     }
   });
 
-  $backToTop.on("click", function () {
+  backToTop?.addEventListener("click", function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
   // ========================================================
   // 4. Copy Address to Clipboard
   // ========================================================
-  $(".copy-address-btn").on("click", function () {
+  document.querySelectorAll(".copy-address-btn").forEach(function (button) {
+    button.addEventListener("click", function () {
     var addressText = "〒455-0848 愛知県名古屋市港区金城ふ頭2丁目7-1 名古屋金城ふ頭アリーナ";
     if (navigator.clipboard) {
       navigator.clipboard.writeText(addressText).then(function () {
-        var $btn = $(".copy-address-btn");
-        var originalHtml = $btn.html();
-        $btn.html('<i data-lucide="check" style="width:16px;height:16px;vertical-align:-2px;margin-right:4px;"></i> コピーしました！');
+        var originalHtml = button.innerHTML;
+        button.innerHTML = '<i data-lucide="check" style="width:16px;height:16px;vertical-align:-2px;margin-right:4px;"></i> コピーしました！';
         if (window.lucide) lucide.createIcons();
-        $btn.css({ background: "var(--color-accent)", color: "#0B1736" });
+        button.style.background = "var(--color-accent)";
+        button.style.color = "#0B1736";
         setTimeout(function () {
-          $btn.html(originalHtml);
+          button.innerHTML = originalHtml;
           if (window.lucide) lucide.createIcons();
-          $btn.css({ background: "", color: "" });
+          button.style.background = "";
+          button.style.color = "";
         }, 2500);
       });
     }
+    });
   });
 
   // ========================================================
   // 5. Active Tab Highlight
   // ========================================================
   var currentPath = window.location.pathname.split("/").pop() || "index.html";
-  $(".desktop-nav a").each(function () {
-    var href = $(this).attr("href");
+  document.querySelectorAll(".desktop-nav a").forEach(function (link) {
+    var href = link.getAttribute("href");
     if (href === currentPath || (currentPath === "" && href === "index.html")) {
-      $(this).addClass("active");
+      link.classList.add("active");
     }
   });
 
@@ -127,7 +132,13 @@ $(function () {
   if (window.lucide) {
     lucide.createIcons();
   }
-});
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initializePageInteractions, { once: true });
+} else {
+  initializePageInteractions();
+}
 
 // ==========================================================
 // 7. 3Dアリーナ・アイソメトリック・カメラエンジン ＆ リアルタイムCanvas
@@ -1798,90 +1809,97 @@ $(function () {
 // ========================================================
 // 8. 出場選手名簿 準備中トースト通知
 // ========================================================
-$(function () {
+function initializePreparationToast() {
   // 選手名簿クラスボタン 準備中トースト
-  $(".panel a, .class-prep-btn").on("click", function (e) {
-    e.preventDefault();
-    var className = $(this).contents().filter(function() {
-      return this.nodeType === 3;
-    }).text().trim() || $(this).text().replace("PREP", "").trim();
-
-    showPrepToast(className);
+  document.querySelectorAll(".panel a, .class-prep-btn").forEach(function (button) {
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      var textNode = Array.from(button.childNodes).find(function (node) {
+        return node.nodeType === Node.TEXT_NODE && node.textContent.trim();
+      });
+      var className = textNode?.textContent.trim() ||
+        button.textContent.replace("PREP", "").trim();
+      showPrepToast(className);
+    });
   });
 
   // 対戦表ボタン 準備中トースト
-  $(".league-prep-btn").on("click", function (e) {
-    e.preventDefault();
-    var gameName = $(this).attr("data-game") || "競技";
-    showGameToast(gameName);
+  document.querySelectorAll(".league-prep-btn").forEach(function (button) {
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      var gameName = button.getAttribute("data-game") || "競技";
+      showGameToast(gameName);
+    });
   });
 
   // コスプレ大会参加者一覧 準備中トースト
-  $(".cos-prep-btn").on("click", function (e) {
-    e.preventDefault();
-    showCosplayToast();
+  document.querySelectorAll(".cos-prep-btn").forEach(function (button) {
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      showCosplayToast();
+    });
   });
 
-  function showPrepToast(className) {
-    var $toast = $("#prep-toast");
-    if (!$toast.length) {
-      $toast = $(
-        '<div id="prep-toast" style="' +
-        'position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px);' +
-        'background: rgba(6, 26, 44, 0.95); border: 1.5px solid #FFA502; border-radius: 16px;' +
-        'padding: 16px 28px; color: #FFFFFF; font-family: sans-serif; font-size: 0.98rem; font-weight: 700;' +
-        'box-shadow: 0 14px 40px rgba(0,0,0,0.6), 0 0 25px rgba(255, 165, 2, 0.4);' +
-        'display: flex; align-items: center; gap: 12px; z-index: 99999; opacity: 0; pointer-events: none;' +
-        'transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1); min-width: 290px; max-width: 90vw;' +
-        '"><i data-lucide="clock" style="width: 22px; height: 22px; color: #FFA502; flex-shrink: 0;"></i>' +
-        '<span id="prep-toast-text"></span></div>'
-      );
-      $("body").append($toast);
-    }
+  function getToast() {
+    var toast = document.getElementById("prep-toast");
+    if (toast) return toast;
 
-    $("#prep-toast-text").html('<strong>【' + className + '】</strong> の選手名簿は現在準備中です<br><small style="color: #A0CBE8; font-weight: 400;">（エントリー確定後に順次公開されます）</small>');
+    toast = document.createElement("div");
+    toast.id = "prep-toast";
+    toast.style.cssText =
+      "position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px);" +
+      "background: rgba(6, 26, 44, 0.95); border: 1.5px solid #FFA502; border-radius: 16px;" +
+      "padding: 16px 28px; color: #FFFFFF; font-family: sans-serif; font-size: 0.98rem; font-weight: 700;" +
+      "box-shadow: 0 14px 40px rgba(0,0,0,0.6), 0 0 25px rgba(255, 165, 2, 0.4);" +
+      "display: flex; align-items: center; gap: 12px; z-index: 99999; opacity: 0; pointer-events: none;" +
+      "transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1); min-width: 290px; max-width: 90vw;";
+    toast.innerHTML =
+      '<i data-lucide="clock" style="width: 22px; height: 22px; color: #FFA502; flex-shrink: 0;"></i>' +
+      '<span id="prep-toast-text"></span>';
+    document.body.appendChild(toast);
+    return toast;
+  }
+
+  function showPrepToast(className) {
+    var toast = getToast();
+    document.getElementById("prep-toast-text").innerHTML =
+      '<strong>【' + className + '】</strong> の選手名簿は現在準備中です<br><small style="color: #A0CBE8; font-weight: 400;">（エントリー確定後に順次公開されます）</small>';
+    showToast(toast, 2800);
   }
 
   function showGameToast(gameName) {
-    var $toast = $("#prep-toast");
-    if (!$toast.length) {
-      showPrepToast("temp");
-    }
-    $("#prep-toast-text").html('<strong>【' + gameName + '】</strong> の対戦表は現在準備中です<br><small style="color: #A0CBE8; font-weight: 400;">（トーナメント確定後に公開されます）</small>');
-    if (window.lucide) lucide.createIcons();
-
-    $toast.css({
-      opacity: "1",
-      transform: "translateX(-50%) translateY(0)",
-      pointerEvents: "auto"
-    });
-
-    clearTimeout(window.prepToastTimer);
-    window.prepToastTimer = setTimeout(function () {
-      $toast.css({
-        opacity: "0",
-        transform: "translateX(-50%) translateY(40px)",
-        pointerEvents: "none"
-      });
-    }, 2800);
-    if (window.lucide) lucide.createIcons();
-
-    $toast.css({
-      opacity: "1",
-      transform: "translateX(-50%) translateY(0)",
-      pointerEvents: "auto"
-    });
-
-    clearTimeout(window.prepToastTimer);
-    window.prepToastTimer = setTimeout(function () {
-      $toast.css({
-        opacity: "0",
-        transform: "translateX(-50%) translateY(40px)",
-        pointerEvents: "none"
-      });
-    }, 3200);
+    var toast = getToast();
+    document.getElementById("prep-toast-text").innerHTML =
+      '<strong>【' + gameName + '】</strong> の対戦表は現在準備中です<br><small style="color: #A0CBE8; font-weight: 400;">（トーナメント確定後に公開されます）</small>';
+    showToast(toast, 3200);
   }
-});
+
+  function showCosplayToast() {
+    var toast = getToast();
+    document.getElementById("prep-toast-text").innerHTML =
+      "<strong>コスプレ大会参加者一覧</strong> は現在準備中です";
+    showToast(toast, 3200);
+  }
+
+  function showToast(toast, duration) {
+    if (window.lucide) lucide.createIcons();
+    toast.style.opacity = "1";
+    toast.style.transform = "translateX(-50%) translateY(0)";
+    toast.style.pointerEvents = "auto";
+    clearTimeout(window.prepToastTimer);
+    window.prepToastTimer = setTimeout(function () {
+      toast.style.opacity = "0";
+      toast.style.transform = "translateX(-50%) translateY(40px)";
+      toast.style.pointerEvents = "none";
+    }, duration);
+  }
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initializePreparationToast, { once: true });
+} else {
+  initializePreparationToast();
+}
 
 
 // ========================================================
