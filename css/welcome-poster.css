@@ -205,3 +205,41 @@ body.welcome-poster-open {
     transition: none !important;
   }
 }
+
+
+
+/* スマホバン対応のCSS作成(横幅400以下) */
+@media (max-width: 500px) {
+  .welcome-poster__dialog {
+    width: 100%;
+    height: min(98vh, 600px);
+    height: min(98svh, 600px);
+    padding: 8px;
+    border-radius: 12px;
+  }
+
+  .welcome-poster__heading {
+    margin: 2px 30px 8px;
+    font-size: clamp(1rem, 5.6vw, 1.4rem);
+  }
+
+  .welcome-poster__close {
+    top: 8px;
+    right: 8px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .welcome-poster__actions {
+    padding-top: 8px;
+  }
+
+  .welcome-poster__enter {
+    min-height: 44px;
+    padding: 10px 24px;
+    font-size: clamp(0.9rem, 4vw, 1.2rem);
+  }
+  .welcome-poster__heading span {
+    display: block;
+  }
+}
