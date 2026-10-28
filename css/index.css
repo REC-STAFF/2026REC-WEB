@@ -436,7 +436,7 @@
 }
 
 .feature-card:hover {
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(6, 26, 44, 0.95);
   border-color: rgba(255, 255, 255, 0.55);
 }
 

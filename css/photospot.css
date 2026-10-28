@@ -23,6 +23,15 @@
   transition: all var(--trans-smooth);
 }
 
+.photospot-image {
+  display: block;
+  width: 100%;
+  max-width: 860px;
+  height: auto;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(5, 30, 48, 0.35);
+}
+
 .photospot-placeholder {
   width: 100%;
   max-width: 860px;
