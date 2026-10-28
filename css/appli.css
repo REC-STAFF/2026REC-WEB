@@ -10,6 +10,37 @@
   margin: 2.5rem 0 1.5rem;
 }
 
+.event-guidelines {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-day {
+  padding: 2rem 2.5rem;
+  background: rgba(255, 255, 255, 0.16);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-left: 6px solid #FFA502;
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(5, 30, 48, 0.35);
+}
+
+.about-day h3 {
+  color: #FFFFFF;
+  font-size: 1.45rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.about-day li {
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
 .url-color {
   display: inline-flex;
   align-items: center;
@@ -34,6 +65,18 @@
 }
 
 @media screen and (max-width: 680px) {
+  .about-day {
+    padding: 1.5rem 1.2rem;
+  }
+
+  .about-day h3 {
+    font-size: 1.15rem;
+  }
+
+  .about-day li {
+    font-size: 0.92rem;
+  }
+
   .url-color {
     font-size: 1.05rem;
     padding: 0.9rem 1.8rem;
