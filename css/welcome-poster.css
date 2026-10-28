@@ -16,8 +16,8 @@ body.welcome-poster-open {
     radial-gradient(circle at 20% 15%, rgba(56, 182, 240, 0.32), transparent 38%),
     radial-gradient(circle at 85% 10%, rgba(254, 200, 56, 0.25), transparent 34%),
     rgba(4, 17, 40, 0.94);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  /* backdrop-filter: blur(14px); */
+  /* -webkit-backdrop-filter: blur(14px); */
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.45s ease, visibility 0.45s ease;
