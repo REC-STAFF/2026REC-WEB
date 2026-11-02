@@ -1379,6 +1379,11 @@ a.glass-card:hover {
 }
 
 .competition-important {
+  color: #5AFF19;
+  font-weight: 900;
+  text-shadow: 0 0 10px rgba(56, 182, 240, 0.35);
+}
+.comp-name {
   color: #7DE3FF;
   font-weight: 900;
   text-shadow: 0 0 10px rgba(56, 182, 240, 0.35);

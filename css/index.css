@@ -571,7 +571,7 @@
 .news-item {
   display: flex;
   align-items: center;
-  gap: 1.6rem;
+  gap: 1.1rem;
   padding: 1.4rem 2rem;
   background: rgba(255, 255, 255, 0.12);
   border: 1.5px solid rgba(255, 255, 255, 0.25);
