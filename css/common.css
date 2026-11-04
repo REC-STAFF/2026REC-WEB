@@ -611,10 +611,14 @@ a.glass-card:hover {
 #footer {
   margin-top: 10rem;
   padding: 5.5rem 1rem 4rem;
-  background: #061F33;
+  background: #061F33 !important;
+  background-image: none !important;
   border-top: 4px solid var(--color-primary);
   text-align: center;
   color: #B2D7F0;
+  opacity: 1 !important;
+  position: relative;
+  z-index: 10;
 }
 
 .footer-inner {
