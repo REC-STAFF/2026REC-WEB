@@ -966,7 +966,7 @@
   flex-direction: column;
   justify-content: center;
   gap: 1.5rem;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(6, 26, 44, 0.90);
   backdrop-filter: blur(18px);
   border: 2px solid rgba(255, 255, 255, 0.4);
   border-left: 6px solid #FFA502;
