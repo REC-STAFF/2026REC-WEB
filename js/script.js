@@ -3,9 +3,9 @@
  * 【ボタン以外は静的・高品位】＆【3Dアリーナ光柱 Canvas】
  */
 
-$(function () {
+function initializePageInteractions() {
   // ========================================================
-  // 1. Mobile Drawer Navigation (Vanilla JS + jQuery Hybrid for 100% Reliability)
+  // 1. Mobile Drawer Navigation
   // ========================================================
   function setupMobileDrawer() {
     const drawer = document.querySelector(".mobile-nav-drawer");
@@ -57,66 +57,71 @@ $(function () {
   // ========================================================
   // 2. Smooth Scroll for Navigation and Action Buttons
   // ========================================================
-  $('a[href^="#"]').on("click", function (e) {
-    var href = $(this).attr("href");
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener("click", function (e) {
+    var href = link.getAttribute("href");
     if (href === "#" || href === "") return;
-    var $target = $(href);
-    if ($target.length) {
+    var target = document.querySelector(href);
+    if (target) {
       e.preventDefault();
       var headerOffset = 64;
-      var targetPosition = $target.offset().top - headerOffset;
+      var targetPosition = target.getBoundingClientRect().top + window.scrollY - headerOffset;
       window.scrollTo({
         top: targetPosition,
         behavior: "smooth"
       });
     }
+    });
   });
 
   // ========================================================
   // 3. Back to Top Button
   // ========================================================
-  var $backToTop = $("#backToTop");
-  $(window).on("scroll", function () {
-    if ($(this).scrollTop() > 300) {
-      $backToTop.addClass("show");
+  var backToTop = document.getElementById("backToTop");
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 300) {
+      backToTop?.classList.add("show");
     } else {
-      $backToTop.removeClass("show");
+      backToTop?.classList.remove("show");
     }
   });
 
-  $backToTop.on("click", function () {
+  backToTop?.addEventListener("click", function () {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 
   // ========================================================
   // 4. Copy Address to Clipboard
   // ========================================================
-  $(".copy-address-btn").on("click", function () {
+  document.querySelectorAll(".copy-address-btn").forEach(function (button) {
+    button.addEventListener("click", function () {
     var addressText = "〒455-0848 愛知県名古屋市港区金城ふ頭2丁目7-1 名古屋金城ふ頭アリーナ";
     if (navigator.clipboard) {
       navigator.clipboard.writeText(addressText).then(function () {
-        var $btn = $(".copy-address-btn");
-        var originalHtml = $btn.html();
-        $btn.html('<i data-lucide="check" style="width:16px;height:16px;vertical-align:-2px;margin-right:4px;"></i> コピーしました！');
+        var originalHtml = button.innerHTML;
+        button.innerHTML = '<i data-lucide="check" style="width:16px;height:16px;vertical-align:-2px;margin-right:4px;"></i> コピーしました！';
         if (window.lucide) lucide.createIcons();
-        $btn.css({ background: "var(--color-accent)", color: "#0B1736" });
+        button.style.background = "var(--color-accent)";
+        button.style.color = "#0B1736";
         setTimeout(function () {
-          $btn.html(originalHtml);
+          button.innerHTML = originalHtml;
           if (window.lucide) lucide.createIcons();
-          $btn.css({ background: "", color: "" });
+          button.style.background = "";
+          button.style.color = "";
         }, 2500);
       });
     }
+    });
   });
 
   // ========================================================
   // 5. Active Tab Highlight
   // ========================================================
   var currentPath = window.location.pathname.split("/").pop() || "index.html";
-  $(".desktop-nav a").each(function () {
-    var href = $(this).attr("href");
+  document.querySelectorAll(".desktop-nav a").forEach(function (link) {
+    var href = link.getAttribute("href");
     if (href === currentPath || (currentPath === "" && href === "index.html")) {
-      $(this).addClass("active");
+      link.classList.add("active");
     }
   });
 
@@ -126,7 +131,13 @@ $(function () {
   if (window.lucide) {
     lucide.createIcons();
   }
-});
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initializePageInteractions, { once: true });
+} else {
+  initializePageInteractions();
+}
 
 // ==========================================================
 // 7. 3Dアリーナ・アイソメトリック・カメラエンジン ＆ リアルタイムCanvas
@@ -1797,87 +1808,284 @@ $(function () {
 // ========================================================
 // 8. 出場選手名簿 準備中トースト通知
 // ========================================================
-$(function () {
+function initializePreparationToast() {
   // 選手名簿クラスボタン 準備中トースト
-  $(".panel a, .class-prep-btn").on("click", function (e) {
-    e.preventDefault();
-    var className = $(this).contents().filter(function() {
-      return this.nodeType === 3;
-    }).text().trim() || $(this).text().replace("PREP", "").trim();
-
-    showPrepToast(className);
+  document.querySelectorAll(".panel a, .class-prep-btn").forEach(function (button) {
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      var textNode = Array.from(button.childNodes).find(function (node) {
+        return node.nodeType === Node.TEXT_NODE && node.textContent.trim();
+      });
+      var className = textNode?.textContent.trim() ||
+        button.textContent.replace("PREP", "").trim();
+      showPrepToast(className);
+    });
   });
 
   // 対戦表ボタン 準備中トースト
-  $(".league-prep-btn").on("click", function (e) {
-    e.preventDefault();
-    var gameName = $(this).attr("data-game") || "競技";
-    showGameToast(gameName);
+  document.querySelectorAll(".league-prep-btn").forEach(function (button) {
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      var gameName = button.getAttribute("data-game") || "競技";
+      showGameToast(gameName);
+    });
   });
 
   // コスプレ大会参加者一覧 準備中トースト
-  $(".cos-prep-btn").on("click", function (e) {
-    e.preventDefault();
-    showCosplayToast();
+  document.querySelectorAll(".cos-prep-btn").forEach(function (button) {
+    button.addEventListener("click", function (e) {
+      e.preventDefault();
+      showCosplayToast();
+    });
   });
 
-  function showPrepToast(className) {
-    var $toast = $("#prep-toast");
-    if (!$toast.length) {
-      $toast = $(
-        '<div id="prep-toast" style="' +
-        'position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px);' +
-        'background: rgba(6, 26, 44, 0.95); border: 1.5px solid #FFA502; border-radius: 16px;' +
-        'padding: 16px 28px; color: #FFFFFF; font-family: sans-serif; font-size: 0.98rem; font-weight: 700;' +
-        'box-shadow: 0 14px 40px rgba(0,0,0,0.6), 0 0 25px rgba(255, 165, 2, 0.4);' +
-        'display: flex; align-items: center; gap: 12px; z-index: 99999; opacity: 0; pointer-events: none;' +
-        'transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1); min-width: 290px; max-width: 90vw;' +
-        '"><i data-lucide="clock" style="width: 22px; height: 22px; color: #FFA502; flex-shrink: 0;"></i>' +
-        '<span id="prep-toast-text"></span></div>'
-      );
-      $("body").append($toast);
-    }
+  function getToast() {
+    var toast = document.getElementById("prep-toast");
+    if (toast) return toast;
 
-    $("#prep-toast-text").html('<strong>【' + className + '】</strong> の選手名簿は現在準備中です<br><small style="color: #A0CBE8; font-weight: 400;">（エントリー確定後に順次公開されます）</small>');
+    toast = document.createElement("div");
+    toast.id = "prep-toast";
+    toast.style.cssText =
+      "position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%) translateY(100px);" +
+      "background: rgba(6, 26, 44, 0.95); border: 1.5px solid #FFA502; border-radius: 16px;" +
+      "padding: 16px 28px; color: #FFFFFF; font-family: sans-serif; font-size: 0.98rem; font-weight: 700;" +
+      "box-shadow: 0 14px 40px rgba(0,0,0,0.6), 0 0 25px rgba(255, 165, 2, 0.4);" +
+      "display: flex; align-items: center; gap: 12px; z-index: 99999; opacity: 0; pointer-events: none;" +
+      "transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1); min-width: 290px; max-width: 90vw;";
+    toast.innerHTML =
+      '<i data-lucide="clock" style="width: 22px; height: 22px; color: #FFA502; flex-shrink: 0;"></i>' +
+      '<span id="prep-toast-text"></span>';
+    document.body.appendChild(toast);
+    return toast;
+  }
+
+  function showPrepToast(className) {
+    var toast = getToast();
+    document.getElementById("prep-toast-text").innerHTML =
+      '<strong>【' + className + '】</strong> の選手名簿は現在準備中です<br><small style="color: #A0CBE8; font-weight: 400;">（エントリー確定後に順次公開されます）</small>';
+    showToast(toast, 2800);
   }
 
   function showGameToast(gameName) {
-    var $toast = $("#prep-toast");
-    if (!$toast.length) {
-      showPrepToast("temp");
-    }
-    $("#prep-toast-text").html('<strong>【' + gameName + '】</strong> の対戦表は現在準備中です<br><small style="color: #A0CBE8; font-weight: 400;">（トーナメント確定後に公開されます）</small>');
-    if (window.lucide) lucide.createIcons();
-
-    $toast.css({
-      opacity: "1",
-      transform: "translateX(-50%) translateY(0)",
-      pointerEvents: "auto"
-    });
-
-    clearTimeout(window.prepToastTimer);
-    window.prepToastTimer = setTimeout(function () {
-      $toast.css({
-        opacity: "0",
-        transform: "translateX(-50%) translateY(40px)",
-        pointerEvents: "none"
-      });
-    }, 2800);
-    if (window.lucide) lucide.createIcons();
-
-    $toast.css({
-      opacity: "1",
-      transform: "translateX(-50%) translateY(0)",
-      pointerEvents: "auto"
-    });
-
-    clearTimeout(window.prepToastTimer);
-    window.prepToastTimer = setTimeout(function () {
-      $toast.css({
-        opacity: "0",
-        transform: "translateX(-50%) translateY(40px)",
-        pointerEvents: "none"
-      });
-    }, 3200);
+    var toast = getToast();
+    document.getElementById("prep-toast-text").innerHTML =
+      '<strong>【' + gameName + '】</strong> の対戦表は現在準備中です<br><small style="color: #A0CBE8; font-weight: 400;">（トーナメント確定後に公開されます）</small>';
+    showToast(toast, 3200);
   }
-});
+
+  function showCosplayToast() {
+    var toast = getToast();
+    document.getElementById("prep-toast-text").innerHTML =
+      "<strong>コスプレ大会参加者一覧</strong> は現在準備中です";
+    showToast(toast, 3200);
+  }
+
+  function showToast(toast, duration) {
+    if (window.lucide) lucide.createIcons();
+    toast.style.opacity = "1";
+    toast.style.transform = "translateX(-50%) translateY(0)";
+    toast.style.pointerEvents = "auto";
+    clearTimeout(window.prepToastTimer);
+    window.prepToastTimer = setTimeout(function () {
+      toast.style.opacity = "0";
+      toast.style.transform = "translateX(-50%) translateY(40px)";
+      toast.style.pointerEvents = "none";
+    }, duration);
+  }
+}
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initializePreparationToast, { once: true });
+} else {
+  initializePreparationToast();
+}
+
+
+// ========================================================
+/*
+// 9. 開発者隠し要素 (AT12C ARCADE : BLOOD PRESSURE) 遅延ローダー
+// 【案2: アーケード別タブ起動モード】
+// ========================================================
+(function () {
+  let isLoading = false;
+
+  window.triggerDevArcade = function (targetGame) {
+    if (window.openDevArcade) {
+      window.openDevArcade(targetGame);
+      return;
+    }
+    if (isLoading) return;
+    isLoading = true;
+
+    // CSSの動的遅延読み込み
+    if (!document.getElementById('dev-arcade-css')) {
+      const link = document.createElement('link');
+      link.id = 'dev-arcade-css';
+      link.rel = 'stylesheet';
+      link.href = 'css/dev-arcade.css?v=20261022_arcade';
+      document.head.appendChild(link);
+    }
+
+    // JSの動的遅延読み込み
+    if (!document.getElementById('dev-arcade-js')) {
+      const script = document.createElement('script');
+      script.id = 'dev-arcade-js';
+      script.src = 'js/dev-arcade.js?v=20261022_arcade';
+      script.onload = function () {
+        isLoading = false;
+        if (window.openDevArcade) {
+          window.openDevArcade(targetGame);
+        }
+      };
+      document.body.appendChild(script);
+    }
+  };
+
+  // 互換エイリアス & STELLAR直起動トリガー
+  window.triggerDevBlood = () => window.triggerDevArcade('blood');
+  window.triggerDevStellar = function () {
+    const win = window.open('js/engine/stellar-command.html', '_blank');
+    if (!win || win.closed || typeof win.closed === 'undefined') {
+      window.triggerDevArcade('stellar');
+    }
+  };
+
+  // 1. キーボードで「at12c」「blood」「stellar」「scf」と打鍵
+  let keyBuffer = '';
+  window.addEventListener('keydown', function (e) {
+    if (!e.key) return;
+    keyBuffer = (keyBuffer + e.key.toLowerCase()).slice(-7);
+    if (keyBuffer.endsWith('stellar') || keyBuffer.endsWith('scf')) {
+      keyBuffer = '';
+      window.triggerDevStellar();
+    } else if (keyBuffer === 'at12c' || keyBuffer.endsWith('blood')) {
+      keyBuffer = '';
+      window.triggerDevArcade('blood');
+    }
+  });
+
+  // 2. URLパラメータの検出 (?dev=stellar, ?dev=scf, ?dev=blood, ?dev=arcade)
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const devParam = params.get('dev');
+    if (devParam === 'stellar' || devParam === 'scf') {
+      setTimeout(window.triggerDevStellar, 500);
+    } else if (devParam === 'blood' || devParam === 'at12c' || devParam === 'arcade') {
+      setTimeout(() => window.triggerDevArcade('blood'), 500);
+    }
+  } catch (err) {}
+
+  // 3. 開発者シークレット・マルチタップ検出（3回でBLOOD PRESSURE、4回でSTELLAR COMMAND）
+  // ※1回・2回タップでは案内を出さず、一般ユーザーへの「うっかり誤バレ」を完全防止
+  let tapCount = 0;
+  let lastTapTime = 0;
+  let resetTimer = null;
+  let triggerTimer = null;
+  let feedbackEl = null;
+
+  function showSecretFeedback(type) {
+    if (!feedbackEl) {
+      feedbackEl = document.createElement('div');
+      feedbackEl.id = 'dev-tap-counter';
+      feedbackEl.style.cssText = 'position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(20px);background:rgba(7,27,43,0.95);border:1.5px solid #FFA502;color:#fff;padding:9px 20px;border-radius:30px;font-size:0.86rem;font-weight:bold;z-index:999999;box-shadow:0 8px 24px rgba(0,0,0,0.6);pointer-events:none;transition:all 0.2s cubic-bezier(0.16,1,0.3,1);opacity:0;white-space:nowrap;letter-spacing:0.5px;backdrop-filter:blur(8px);';
+      document.body.appendChild(feedbackEl);
+    }
+    
+    if (type === 'blood') {
+      feedbackEl.innerHTML = `<span style="color:#ef3448;">🩸 BLOOD PRESSURE</span> 起動中...`;
+      feedbackEl.style.borderColor = '#ef3448';
+    } else if (type === 'stellar') {
+      feedbackEl.innerHTML = `<span style="color:#38B6F0;">🚀 STELLAR COMMAND FRONT</span> 起動中...`;
+      feedbackEl.style.borderColor = '#38B6F0';
+    }
+    
+    feedbackEl.style.opacity = '1';
+    feedbackEl.style.transform = 'translateX(-50%) translateY(0)';
+    
+    clearTimeout(feedbackEl._timer);
+    feedbackEl._timer = setTimeout(() => {
+      if (feedbackEl) {
+        feedbackEl.style.opacity = '0';
+        feedbackEl.style.transform = 'translateX(-50%) translateY(20px)';
+      }
+    }, 1800);
+
+    if (navigator.vibrate) {
+      try { navigator.vibrate(type === 'stellar' ? [40, 50, 40, 80] : [50, 60, 90]); } catch(vErr) {}
+    }
+  }
+
+  function handleDevTriggerTap(e) {
+    const target = e.target.closest('.dev-trigger-target, .brand-badge');
+    if (!target) return;
+
+    if (e.cancelable) e.preventDefault();
+    e.stopPropagation();
+
+    const now = Date.now();
+    // 連続タップ間隔（900ms以上空いたらリセット）
+    if (now - lastTapTime > 900) {
+      tapCount = 1;
+    } else {
+      tapCount++;
+    }
+    lastTapTime = now;
+
+    clearTimeout(resetTimer);
+    resetTimer = setTimeout(() => {
+      tapCount = 0;
+    }, 1200);
+
+    // 微細なフィードバック（一般人にはバグやギミックと悟られないごく僅かなスケール変化のみ）
+    if (target) {
+      target.style.transition = 'transform 0.1s ease';
+      target.style.transform = 'scale(1.08)';
+      setTimeout(() => { target.style.transform = ''; }, 100);
+    }
+
+    // 1回・2回タップ時は何もしない（案内トーストも一切出さない＝バレ防止）
+    if (tapCount < 3) {
+      return;
+    }
+
+    // 3回タップ：少し待機（380ms）。もし4回目のタップが来なければ BLOOD PRESSURE 起動
+    if (tapCount === 3) {
+      clearTimeout(triggerTimer);
+      triggerTimer = setTimeout(() => {
+        if (tapCount === 3) {
+          tapCount = 0;
+          clearTimeout(resetTimer);
+          showSecretFeedback('blood');
+          setTimeout(() => {
+            window.triggerDevArcade('blood');
+          }, 320);
+        }
+      }, 380);
+    } else if (tapCount >= 4) {
+      // 4回タップ：3回タイマーを直ちにキャンセルして STELLAR COMMAND FRONT 起動
+      clearTimeout(triggerTimer);
+      tapCount = 0;
+      clearTimeout(resetTimer);
+      showSecretFeedback('stellar');
+      setTimeout(() => {
+        window.triggerDevStellar();
+      }, 320);
+    }
+  }
+
+  // pointerdown (スマホ実機 & PCマウスのタップ/クリック即時検出)
+  document.addEventListener('pointerdown', function (e) {
+    if (e.target.closest('.dev-trigger-target, .brand-badge')) {
+      handleDevTriggerTap(e);
+    }
+  }, { passive: false });
+
+  // 通常の click イベントによる画面スクロールや意図しない動作を防止
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('.dev-trigger-target, .brand-badge')) {
+      if (e.cancelable) e.preventDefault();
+      e.stopPropagation();
+    }
+  }, { passive: false });
+})();
+*/

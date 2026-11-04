@@ -32,18 +32,21 @@
       <div class="welcome-poster__dialog">
         <button type="button" class="welcome-poster__close" aria-label="お知らせを閉じる">&times;</button>
         <h1 id="welcomePosterTitle" class="welcome-poster__heading">
-          <span>レクリエーション開催！</span>
+          <span>レ・クリエイション開催！</span>
         </h1>
         <div class="welcome-poster__image-wrap">
           <picture>
             <source
               media="(max-width: 680px)"
-              srcset="images/recreation-poster-2026-smartphone.jpg"
+              srcset="images/recreation-poster-2026-smartphone.webp"
             >
             <img
               class="welcome-poster__image"
-              src="images/recreation-poster-2026.jpg"
+              src="images/recreation-poster-2026-smartphone.webp"
               alt="RE:CREATION 2026 開催ポスター。11月27日金曜日、金城ふ頭アリーナ、9時30分から16時まで。"
+              fetchpriority="high"
+              loading="eager"
+              decoding="async"
             >
           </picture>
         </div>
