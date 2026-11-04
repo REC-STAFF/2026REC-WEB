@@ -1384,10 +1384,15 @@ a.glass-card:hover {
   text-shadow: 0 0 10px rgba(56, 182, 240, 0.35);
 }
 .comp-name {
-  color: #7DE3FF;
+  color: #FFA502;
   font-weight: 900;
   text-shadow: 0 0 10px rgba(56, 182, 240, 0.35);
 }
+/* .comp-name {
+  color: #7DE3FF;
+  font-weight: 900;
+  text-shadow: 0 0 10px rgba(56, 182, 240, 0.35);
+} */
 
 .cs-icon-pod {
   width: 64px;

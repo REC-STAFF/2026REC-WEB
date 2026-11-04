@@ -27,7 +27,7 @@
   align-items: center;
   text-align: center;
   padding: 34px 24px;
-  background: rgba(255, 255, 255, 0.16) !important;
+  background: rgba(0, 0, 0, 0.25) !important;
   backdrop-filter: blur(18px) !important;
   -webkit-backdrop-filter: blur(18px) !important;
   border: 2.5px solid rgba(255, 255, 255, 0.45) !important;
@@ -48,11 +48,18 @@
 
 .sub-title {
   font-size: 0.95rem;
-  color: #FFA502;
+  color: #FFFFFF;
   font-weight: 800;
   letter-spacing: 1px;
   margin-bottom: 0.4rem;
 }
+/* .sub-title {
+  font-size: 0.95rem;
+  color: #FFA502;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 0.4rem;
+} */
 
 .event-cards h2.title {
   color: #FFFFFF;
@@ -86,6 +93,16 @@
 }
 
 .place {
+  background: #003b57;
+  border: 1.5px solid #FFD07A;
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 0.95rem;
+  padding: 5px 14px;
+  border-radius: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+/* .place {
   background: #FFA502;
   border: 1.5px solid #FFD07A;
   color: #082F49;
@@ -94,7 +111,7 @@
   padding: 5px 14px;
   border-radius: 20px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
+} */
 
 @media screen and (max-width: 680px) {
   .cards-row { grid-template-columns: 1fr; gap: 1.2rem; }
