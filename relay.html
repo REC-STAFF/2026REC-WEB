@@ -10,6 +10,9 @@
   
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="js/components.js?v=20261022_rev3"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script src="js/match-schedule-data.js?v=20261114"></script>
+  <script src="js/match-schedule.js?v=20261114_rev3" defer></script>
 </head>
 
 <body class="bg-uroko-cyan">
@@ -75,13 +78,17 @@
           </h4>
         </div>
 
-        <a class="leagueTable-link league-prep-btn" href="javascript:void(0)" data-game="全員リレー" target="_blank">
+        <div class="leagueTable-link" data-match-schedule="relay">
           <div class="league-title">
             <h3>
               対戦表
             </h3>
+            <div class="match-schedule">
+              <canvas class="match-schedule-canvas" aria-label="学科別対抗リレー対戦表"></canvas>
+              <p class="match-schedule-status" role="status">対戦表を読み込んでいます。</p>
+            </div>
           </div>
-        </a>
+        </div>
 
         <div class="relay-NoP">
           <h3 class="kyougiSdhousai-cont-text relay-NoP-title">
