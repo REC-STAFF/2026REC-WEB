@@ -611,10 +611,14 @@ a.glass-card:hover {
 #footer {
   margin-top: 10rem;
   padding: 5.5rem 1rem 4rem;
-  background: #061F33;
+  background: #061F33 !important;
+  background-image: none !important;
   border-top: 4px solid var(--color-primary);
   text-align: center;
   color: #B2D7F0;
+  opacity: 1 !important;
+  position: relative;
+  z-index: 10;
 }
 
 .footer-inner {
@@ -1389,10 +1393,20 @@ a.glass-card:hover {
 }
 
 .competition-important {
-  color: #7DE3FF;
+  color: #5AFF19;
   font-weight: 900;
   text-shadow: 0 0 10px rgba(56, 182, 240, 0.35);
 }
+.comp-name {
+  color: #FFA502;
+  font-weight: 900;
+  text-shadow: 0 0 10px rgba(56, 182, 240, 0.35);
+}
+/* .comp-name {
+  color: #7DE3FF;
+  font-weight: 900;
+  text-shadow: 0 0 10px rgba(56, 182, 240, 0.35);
+} */
 
 .cs-icon-pod {
   width: 64px;

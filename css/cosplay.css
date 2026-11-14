@@ -165,7 +165,23 @@ body, body.page-cosplay {
 }
 
 .cos-important {
-  color: #7DE3FF;
+  color: #FFFFFF;
+  background-color:#FF355E ;
+  font-weight: 900;
+  text-shadow: 0 0 10px rgba(56, 182, 240, 0.35);
+}
+
+#cos-OK {
+  color: #FFFFFF;
+  background-color:#FF355E ;
+  font-weight: 900;
+  text-shadow: 0 0 10px rgba(56, 182, 240, 0.35);
+}
+
+/* id=cos-NG */
+#cos-NG {
+  color: #FFFFFF;
+  background-color:#38B6F0 ;
   font-weight: 900;
   text-shadow: 0 0 10px rgba(56, 182, 240, 0.35);
 }
