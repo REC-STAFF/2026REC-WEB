@@ -682,24 +682,27 @@
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
+  flex: 1 1 auto;
+  min-width: 0;
   max-width: 600px;
 }
 
 .app-banner-info h3 {
-  font-size: 2.3rem;
+  font-size: 3rem;
   color: #FFFFFF;
   font-weight: 900;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
 }
 
 .app-banner-info p {
-  font-size: 1.2rem;
+  font-size: 2rem;
   color: #E1F0FA;
   line-height: 2;
 }
 
 .app-banner-img-box {
-  max-width: 450px;
+  width: min(100%, 370px);
+  flex: 0 0 370px;
   border-radius: 18px;
   overflow: hidden;
   border: 2.5px solid rgba(255, 255, 255, 0.6);
@@ -1021,10 +1024,6 @@ a.glass-card.category-card:hover {
     grid-template-columns: 1fr;
   }
 
-  .app-banner-card {
-    flex-direction: column;
-    text-align: center;
-  }
 }
 
 @media screen and (max-width: 680px) {
@@ -1429,6 +1428,8 @@ a.glass-card.category-card:hover {
     max-width: 320px !important;
     margin: 0 auto !important;
   }
+}
+
 /* =========================================================
    OVERFLOW VISIBLE FIX (Prevent Badge & Text Cropping)
    ========================================================= */
@@ -1690,4 +1691,18 @@ a.glass-card.category-card:hover {
 .app-banner-prep-card:hover .app-prep-btn {
   background: #38B6F0;
   color: #071E30;
+}
+
+@media screen and (min-width: 681px) {
+  .app-banner-card {
+    flex-direction: row !important;
+    text-align: left !important;
+  }
+
+  .app-banner-img-box {
+    width: 370px !important;
+    max-width: 370px !important;
+    flex: 0 0 370px !important;
+    margin: 0 !important;
+  }
 }
