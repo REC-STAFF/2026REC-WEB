@@ -16,6 +16,10 @@
   text-align: center;
 }
 
+.appli-main > section + section {
+  margin-top: 5rem;
+}
+
 .about-day {
   padding: 2rem 2.5rem;
   background: rgba(255, 255, 255, 0.16);
@@ -98,9 +102,24 @@
   filter: brightness(1.08);
 }
 
+@media screen and (min-width: 681px) {
+  .app-overview-section {
+    max-width: 1100px;
+  }
+
+  .app-overview li {
+    font-size: 1.17rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  }
+}
+
 @media screen and (max-width: 680px) {
   .about-day {
     padding: 1.5rem 1.2rem;
+  }
+
+  .appli-main > section + section {
+    margin-top: 1.5rem;
   }
 
   .app-overview {
