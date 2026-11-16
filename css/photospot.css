@@ -5,8 +5,8 @@
    共通レイアウト・タイトル・枠線は common.css に集約済み
    ========================================================= */
 
-  /** そのままだと文言が目立たず見えにくいため、フォント設定するために追加しました。**/
-.photospot-text{
+/** そのままだと文言が目立たず見えにくいため、フォント設定するために追加しました。**/
+.photospot-text {
   font-size: 30px;
   font-weight: bold;
 }
@@ -140,6 +140,8 @@
     background: rgba(8, 36, 60, 0.65) !important;
   }
 
+  
+
   .photospot-placeholder {
     min-height: 300px;
     padding: 2.2rem 1.2rem;
@@ -147,9 +149,33 @@
     gap: 0.8rem;
   }
 
-  .placeholder-icon-wrap { width: 64px; height: 64px; border-radius: 18px; }
-  .placeholder-icon { width: 32px; height: 32px; }
-  .placeholder-title { font-size: 1.2rem; }
-  .placeholder-desc { font-size: 0.86rem; line-height: 1.65; }
-  .placeholder-meta { flex-direction: column; gap: 8px; }
+  .placeholder-icon-wrap {
+    width: 64px;
+    height: 64px;
+    border-radius: 18px;
+  }
+
+  .placeholder-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .placeholder-title {
+    font-size: 1.2rem;
+  }
+
+  .placeholder-desc {
+    font-size: 0.86rem;
+    line-height: 1.65;
+  }
+
+  .placeholder-meta {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .photospot-text {
+    font-size: 15px;
+    font-weight: bold;
+  }
 }
