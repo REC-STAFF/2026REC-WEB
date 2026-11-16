@@ -65,6 +65,47 @@
   margin-bottom: 0;
 }
 
+.app-download-link {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+.app-download-area {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.app-download-list {
+  flex: 1 1 auto;
+  margin: 0;
+}
+
+.app-qr-list {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 1rem;
+}
+
+.app-qr-item {
+  width: 150px;
+  margin: 0;
+  text-align: center;
+}
+
+.app-qr-item figcaption {
+  margin-bottom: 0.4rem;
+  color: #FFFFFF;
+  font-weight: 800;
+}
+
+.app-qr-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .app-image {
   flex: 0 0 auto;
   text-align: center;
@@ -164,6 +205,19 @@
 
   .app-overview-copy {
     width: 100%;
+  }
+
+  .app-download-area {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .app-qr-list {
+    justify-content: center;
+  }
+
+  .app-qr-item {
+    width: 120px;
   }
 
   .about-day h3 {
