@@ -5,6 +5,12 @@
    共通レイアウト・タイトル・枠線は common.css に集約済み
    ========================================================= */
 
+  /** そのままだと文言が目立たず見えにくいため、フォント設定するために追加しました。**/
+.photospot-text{
+  font-size: 30px;
+  font-weight: bold;
+}
+
 .photospot-frame-card {
   margin: 0 auto;
   width: 100%;
@@ -17,6 +23,7 @@
   box-shadow: 0 16px 45px rgba(5, 30, 48, 0.45), 0 0 30px rgba(56, 182, 240, 0.25);
   padding: 3rem 2rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
