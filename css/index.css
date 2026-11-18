@@ -734,12 +734,13 @@
   box-shadow: 0 16px 45px rgba(0, 0, 0, 0.5), 0 0 35px rgba(56, 182, 240, 0.4);
 }
 
-.movie-theater-frame video {
+.movie-theater-frame iframe {
   width: 100%;
   aspect-ratio: 16/9;
   border-radius: 14px;
   display: block;
   background: #000;
+  border: 0;
 }
 
 /* =========================================================
