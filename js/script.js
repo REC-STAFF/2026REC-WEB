@@ -115,7 +115,49 @@ function initializePageInteractions() {
   });
 
   // ========================================================
-  // 5. Active Tab Highlight
+  // 5. Other Access Modal
+  // ========================================================
+  var otherAccessButton = document.getElementById("otherAccessButton");
+  var accessModal = document.getElementById("otherAccessModal");
+  var accessModalClose = accessModal?.querySelector(".access-modal__close");
+  var previousAccessFocus = null;
+
+  function openAccessModal() {
+    if (!accessModal) return;
+    previousAccessFocus = document.activeElement;
+    accessModal.classList.add("is-visible");
+    accessModal.setAttribute("aria-hidden", "false");
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+    accessModalClose?.focus();
+  }
+
+  function closeAccessModal() {
+    if (!accessModal) return;
+    accessModal.classList.remove("is-visible");
+    accessModal.setAttribute("aria-hidden", "true");
+    document.documentElement.style.overflow = "";
+    document.body.style.overflow = "";
+    if (previousAccessFocus && typeof previousAccessFocus.focus === "function") {
+      previousAccessFocus.focus();
+    }
+  }
+
+  otherAccessButton?.addEventListener("click", openAccessModal);
+  accessModalClose?.addEventListener("click", closeAccessModal);
+  accessModal?.addEventListener("click", function (event) {
+    if (!event.target.closest(".access-modal__dialog")) {
+      closeAccessModal();
+    }
+  });
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape" && accessModal?.classList.contains("is-visible")) {
+      closeAccessModal();
+    }
+  });
+
+  // ========================================================
+  // 6. Active Tab Highlight
   // ========================================================
   var currentPath = window.location.pathname.split("/").pop() || "index.html";
   document.querySelectorAll(".desktop-nav a").forEach(function (link) {

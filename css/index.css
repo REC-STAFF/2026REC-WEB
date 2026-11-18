@@ -1000,10 +1000,175 @@ a.glass-card.category-card:hover {
 }
 
 .copy-address-btn {
-  align-self: flex-start;
   margin-top: 0.5rem;
   padding: 12px 26px;
   font-size: 1.05rem;
+}
+
+.access-action-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 0.5rem;
+}
+
+.access-action-buttons .copy-address-btn {
+  margin-top: 0;
+  align-self: center;
+}
+
+.other-access-btn {
+  min-height: 48px;
+  margin: 0;
+  padding: 12px 26px;
+  font-size: 1.05rem;
+  color: #111111 !important;
+  background: #aeb7b9;
+  border: 2px solid #424a4d;
+  box-shadow: 0 8px 18px rgba(3, 20, 32, 0.28);
+  text-shadow: none;
+}
+
+.other-access-btn:hover,
+.other-access-btn:focus-visible {
+  color: #111111 !important;
+  background: #c3cbcd;
+  border-color: #303638;
+  box-shadow: 0 10px 22px rgba(3, 20, 32, 0.38);
+  filter: none;
+}
+
+.access-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(4, 17, 40, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+.access-modal.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.access-modal__dialog {
+  position: relative;
+  width: min(860px, calc(100vw - 40px));
+  max-height: calc(100vh - 40px);
+  max-height: calc(100svh - 40px);
+  overflow-y: auto;
+  padding: 64px 44px 44px;
+  border: 3px solid #38b6f0;
+  border-radius: 22px;
+  background:
+    radial-gradient(circle at 20% 15%, rgba(56, 182, 240, 0.18), transparent 38%),
+    rgba(7, 28, 46, 0.96);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.52), 0 0 28px rgba(56, 182, 240, 0.22);
+  text-align: center;
+  transform: scale(0.96);
+  transition: transform 0.25s ease;
+}
+
+.access-modal.is-visible .access-modal__dialog {
+  transform: scale(1);
+}
+
+.access-modal__dialog h2 {
+  margin: 0 0 14px;
+  color: #FFFFFF;
+  font-size: 1.8rem;
+}
+
+.access-modal__dialog p {
+  margin: 0;
+  color: #E8F4FC;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.access-modal__content {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.access-route {
+  min-width: 0;
+  padding: 22px;
+  border: 1px solid rgba(56, 182, 240, 0.5);
+  border-radius: 16px;
+  background: rgba(4, 17, 40, 0.35);
+}
+
+.access-route h3 {
+  margin: 0 0 18px;
+  color: #FFA502;
+  font-size: 1.35rem;
+  font-weight: 900;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.access-route__name {
+  margin: 0 0 10px !important;
+  color: #FFFFFF;
+  font-weight: 900;
+  line-height: 1.5;
+}
+
+.access-route__stop {
+  margin: 2px 0 !important;
+  padding-left: 8px;
+  line-height: 1.7;
+}
+
+.access-route__stop span {
+  display: inline-block;
+  min-width: 2.2em;
+  margin-left: 4px;
+  font-weight: 900;
+}
+
+.access-route__transfer,
+.access-route__walking {
+  margin: 12px 0 !important;
+  color: #FFA502;
+  font-weight: 900;
+  text-align: center;
+}
+
+.access-modal__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 2px solid #38b6f0;
+  border-radius: 50%;
+  background: rgba(7, 28, 46, 0.96);
+  color: #FFFFFF;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.access-modal__close:hover,
+.access-modal__close:focus-visible {
+  background: #38b6f0;
+  color: #0B1736;
 }
 
 /* =========================================================
@@ -1031,6 +1196,18 @@ a.glass-card.category-card:hover {
 @media screen and (max-width: 680px) {
   h2.section-heading {
     font-size: 1.9rem;
+  }
+
+  .access-modal__dialog {
+    padding: 58px 16px 24px;
+  }
+
+  .access-modal__content {
+    grid-template-columns: 1fr;
+  }
+
+  .access-route {
+    padding: 18px 14px;
   }
 
   .access-details h3 {
