@@ -127,7 +127,7 @@
   width: 100%;
   background: linear-gradient(168deg, #1b2d44 0%, #0d1a29 55%, #07111b 100%);
   border-radius: 22px;
-  padding: 16px 16px 20px;
+  padding: 16px;
   border: 2px solid rgba(88, 196, 248, 0.55);
   box-shadow: 
     0 32px 85px rgba(2, 16, 32, 0.75), 
@@ -209,6 +209,14 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.jumbotron-screen-wrap iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 12px;
+  display: block;
 }
 
 /* 動画本体（object-fit: contain により、異なるアスペクト比でも歪まず黒帯内に完璧フィット） */
