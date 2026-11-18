@@ -328,7 +328,10 @@
               あおなみ線 <strong>「金城ふ頭駅」</strong> 下車<br>
               改札口より <strong>徒歩1分</strong>
             </p>
-            <button type="button" class="btn-arcade copy-address-btn"><i data-lucide="copy" style="width: 16px; height: 16px; vertical-align: -2px; margin-right: 4px;"></i> 住所をコピー</button>
+            <div class="access-action-buttons">
+              <button type="button" class="btn-arcade copy-address-btn"><i data-lucide="copy" style="width: 16px; height: 16px; vertical-align: -2px; margin-right: 4px;"></i> 住所をコピー</button>
+              <button type="button" class="btn-arcade other-access-btn" id="otherAccessButton">その他のアクセス方法</button>
+            </div>
           </div>
 
         </div>
@@ -341,6 +344,38 @@
     <site-footer></site-footer>
 
   </div> <!--container-->
+
+  <div class="access-modal" id="otherAccessModal" role="dialog" aria-modal="true" aria-labelledby="otherAccessModalTitle" aria-hidden="true">
+    <div class="access-modal__dialog">
+      <button type="button" class="access-modal__close" aria-label="モーダルを閉じる">&times;</button>
+      <h2 id="otherAccessModalTitle">その他のアクセス</h2>
+      <div class="access-modal__content">
+        <section class="access-route">
+          <h3>バスのみ</h3>
+          <p class="access-route__name">名古屋市営バス「幹名駅2」</p>
+          <p class="access-route__stop">・名古屋駅 <span>発</span></p>
+          <p class="access-route__stop">・稲永駅 <span>着</span></p>
+          <p class="access-route__transfer">↓乗り換え</p>
+          <p class="access-route__name">名古屋市営バス「幹築地1」</p>
+          <p class="access-route__stop">・稲永駅 <span>発</span></p>
+          <p class="access-route__stop">・金城橋 <span>着</span></p>
+          <p class="access-route__walking">↓徒歩 約21～22分</p>
+        </section>
+
+        <section class="access-route">
+          <h3>電車（あおなみ線以外）＋バス</h3>
+          <p class="access-route__name">地下鉄 名港線</p>
+          <p class="access-route__stop">・金山駅 <span>発</span></p>
+          <p class="access-route__stop">・築地口駅 <span>着</span></p>
+          <p class="access-route__transfer">↓乗り換え</p>
+          <p class="access-route__name">名古屋市営バス「幹築地1」</p>
+          <p class="access-route__stop">・築地口 <span>発</span></p>
+          <p class="access-route__stop">・金城橋 <span>着</span></p>
+          <p class="access-route__walking">↓徒歩 約21～22分</p>
+        </section>
+      </div>
+    </div>
+  </div>
 
   <!-- <script src="js/jQuery-v3.7.1.js?v=20261024_rev1"></script> -->
   <script src="js/script.js?v=20261022_rev3"></script>
