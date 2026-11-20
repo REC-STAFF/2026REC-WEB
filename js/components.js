@@ -64,7 +64,7 @@
         { href: 'index.html', label: 'ホーム', key: 'index.html' },
         { href: 'sennsyu.html', label: '出場選手', key: 'sennsyu.html' },
         { href: 'kyougi.html', label: '競技一覧', key: 'kyougi.html', matchSub: true },
-        { href: 'basyo.html', label: '集合場所', key: 'basyo.html' },
+        { href: 'basyo.html', label: 'マップ', key: 'basyo.html' },
         { href: 'cosplay.html', label: 'コスプレ大会', key: 'cosplay.html' },
         { href: 'photospot.html', label: 'フォトスポット', key: 'photospot.html' },
         { href: 'ranking.html', label: 'ランキング', key: 'ranking.html' },
@@ -82,7 +82,7 @@
         { href: 'index.html', label: 'トップ', icon: 'home', key: 'index.html' },
         { href: 'sennsyu.html', label: '出場選手', icon: 'users', key: 'sennsyu.html' },
         { href: 'kyougi.html', label: '競技一覧', icon: 'trophy', key: 'kyougi.html', matchSub: true },
-        { href: 'basyo.html', label: '集合場所・座席', icon: 'map-pin', key: 'basyo.html' },
+        { href: 'basyo.html', label: 'マップ', icon: 'map-pin', key: 'basyo.html' },
         { href: 'cosplay.html', label: 'コスプレ大会', icon: 'sparkles', key: 'cosplay.html' },
         { href: 'photospot.html', label: 'フォトスポット', icon: 'camera', key: 'photospot.html' },
         { href: 'ranking.html', label: 'ランキング', icon: 'medal', key: 'ranking.html' },
@@ -214,7 +214,7 @@
           <a href="index.html">ホーム</a>
           <a href="sennsyu.html">出場選手</a>
           <a href="kyougi.html">競技一覧</a>
-          <a href="basyo.html">集合場所</a>
+          <a href="basyo.html">マップ</a>
           <a href="cosplay.html">コスプレ大会</a>
           <a href="photospot.html">フォトスポット</a>
           <a href="ranking.html">ランキング</a>
