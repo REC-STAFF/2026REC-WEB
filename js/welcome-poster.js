@@ -30,7 +30,6 @@
 
     overlay.innerHTML = `
       <div class="welcome-poster__dialog">
-        <button type="button" class="welcome-poster__close" aria-label="お知らせを閉じる">&times;</button>
         <h1 id="welcomePosterTitle" class="welcome-poster__heading">
           <span>レ・クリエイション開催！</span>
         </h1>
@@ -51,13 +50,12 @@
           </picture>
         </div>
         <div class="welcome-poster__actions">
-          <button type="button" class="welcome-poster__enter">サイトを見る</button>
+          <button type="button" class="welcome-poster__enter">閉じる</button>
         </div>
       </div>
     `;
 
     const dialog = overlay.querySelector(".welcome-poster__dialog");
-    const closeButton = overlay.querySelector(".welcome-poster__close");
     const enterButton = overlay.querySelector(".welcome-poster__enter");
     const previousFocus = document.activeElement;
     let closed = false;
@@ -87,7 +85,7 @@
       }
 
       if (event.key !== "Tab") return;
-      const focusable = [closeButton, enterButton];
+      const focusable = [enterButton];
       const currentIndex = focusable.indexOf(document.activeElement);
       event.preventDefault();
 
@@ -98,7 +96,6 @@
       }
     }
 
-    closeButton.addEventListener("click", closePoster);
     enterButton.addEventListener("click", closePoster);
     overlay.addEventListener("click", function (event) {
       if (!dialog.contains(event.target)) closePoster();
@@ -111,7 +108,7 @@
 
     window.requestAnimationFrame(function () {
       overlay.classList.add("is-visible");
-      closeButton.focus();
+      enterButton.focus();
     });
   }
 
