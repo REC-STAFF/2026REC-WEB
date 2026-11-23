@@ -2,9 +2,19 @@
 //tagsのclassNameをkarawakuにすると表示を消せる
 window.RECREATION_NEWS = [
   {
+    href: "sennsyu.html",
+    tags: [
+      { label: "重要", className: "karawaku" },
+      { label: "NEW", className: "news-tag" }
+    ],
+    dateTime: "2026-11-23",
+    dateLabel: "更新日：11/23",
+    text: "各クラスの出場選手を追加しました!!"
+  },
+  {
     href: "basyo.html",
     tags: [
-      { label: "NEW", className: "news-tag" },
+      { label: "NEW", className: "karawaku" },
       { label: "重要", className: "news-tag news-tag-important" }
     ],
     dateTime: "2026-11-18",
