@@ -1854,6 +1854,10 @@ function initializePreparationToast() {
   // 選手名簿クラスボタン 準備中トースト
   document.querySelectorAll(".panel a, .class-prep-btn").forEach(function (button) {
     button.addEventListener("click", function (e) {
+      var href = button.getAttribute("href");
+      if (href && href !== "javascript:void(0)") {
+        return;
+      }
       e.preventDefault();
       var textNode = Array.from(button.childNodes).find(function (node) {
         return node.nodeType === Node.TEXT_NODE && node.textContent.trim();
