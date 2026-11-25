@@ -74,6 +74,16 @@
       frame.style.border = "0";
 
       if (isMobile) {
+        frame.addEventListener("load", function () {
+          var frameDocument = frame.contentDocument;
+          var pageImage = frameDocument && frameDocument.querySelector("img");
+          if (!pageImage) return;
+
+          pageImage.style.display = "block";
+          pageImage.style.width = "100%";
+          pageImage.style.height = "auto";
+        });
+
         pdfjsLib.getDocument({
           url: pdfUrl,
           useSystemFonts: true,
