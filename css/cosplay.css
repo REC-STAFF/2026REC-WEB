@@ -152,6 +152,13 @@ body, body.page-cosplay {
   line-height: 1.6;
 }
 
+.cos-awards-title {
+  margin: 1.5rem 0 0.75rem;
+  color: #FEC838;
+  font-size: 1.15rem;
+  font-weight: 900;
+}
+
 .cos-summary-table th,
 .cos-summary-table td {
   padding: 0.85rem 1rem;
@@ -640,6 +647,10 @@ body, body.page-cosplay {
   .cos-summary-table {
     border-collapse: separate;
     border-spacing: 0;
+  }
+  .cos-awards-title {
+    margin: 1rem 0 0.5rem;
+    font-size: 0.95rem;
   }
   .cos-summary-table thead {
     position: absolute;

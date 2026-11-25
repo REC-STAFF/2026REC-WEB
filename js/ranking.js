@@ -46,7 +46,7 @@
       return `
         <tr class="cosplay-ranking-row">
           <td class="cosplay-ranking-rank" data-label="順位">
-            <span class="cosplay-rank-badge ${rankClass}">${entry.rank}位</span>
+            <span class="cosplay-rank-badge ${rankClass}">${entry.rank}</span>
           </td>
           <td data-label="参加者名">${entry.name}</td>
           <td data-label="内容">${entry.naiyou}</td>
@@ -54,4 +54,41 @@
       `;
     }).join('');
   }
+})();
+(function () {
+  'use strict';
+
+  const cosplayAwardsSection = document.getElementById('cosplayAwardsSection');
+  if (!cosplayAwardsSection) return;
+
+  const awardsConfig = window.COSPLAY_AWARDS_CONFIG;
+  if (!awardsConfig || awardsConfig.showAwards !== true) return;
+
+  const cosplayAwardsBody = document.getElementById('Cosplaysyoudata');
+  if (!cosplayAwardsBody) {
+    console.error('コスプレ大会の各賞テーブルが見つかりません。');
+    return;
+  }
+
+  if (!Array.isArray(window.Cosplaysyoudata)) {
+    console.error('コスプレ大会の各賞データを読み込めませんでした。');
+    return;
+  }
+
+  cosplayAwardsBody.innerHTML = window.Cosplaysyoudata.map(function (entry) {
+    const awardLabel = typeof entry.rank === 'number' ? entry.rank + '位' : entry.rank;
+    const awardClass = typeof entry.rank === 'number' ? ' cosplay-rank-' + entry.rank : '';
+
+    return `
+      <tr class="cosplay-ranking-row">
+        <td class="cosplay-ranking-rank" data-label="賞">
+          <span class="cosplay-rank-badge${awardClass}">${awardLabel}</span>
+        </td>
+        <td data-label="参加者名">${entry.name}</td>
+        <td data-label="内容">${entry.naiyou}</td>
+      </tr>
+    `;
+  }).join('');
+
+  cosplayAwardsSection.hidden = false;
 })();
