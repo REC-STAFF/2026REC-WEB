@@ -7,6 +7,16 @@ window.RECREATION_NEWS = [
       { label: "重要", className: "karawaku" },
       { label: "NEW", className: "news-tag" }
     ],
+    dateTime: "2026-11-25",
+    dateLabel: "更新日：11/25",
+    text: "各競技の集合場所を追加しました!!"
+  },
+  {
+    href: "sennsyu.html",
+    tags: [
+      { label: "重要", className: "karawaku" },
+      { label: "NEW", className: "karawaku" }
+    ],
     dateTime: "2026-11-23",
     dateLabel: "更新日：11/23",
     text: "各クラスの出場選手を追加しました!!"
@@ -72,6 +82,7 @@ window.RECREATION_NEWS = [
     text: "「フォトスポット」を更新しました!!"
   },
   {
+    href: "index.html",
     tags: [
       { label: "NEW", className: "karawaku" },
       { label: "重要", className: "karawaku" }
