@@ -11,8 +11,8 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <script src="js/components.js?v=20261022_rev3"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-  <script src="js/match-schedule-data.js?v=20261114"></script>
-  <script src="js/match-schedule.js?v=20261114_rev3" defer></script>
+  <script src="js/match-schedule-data.js?v=20261125_rev1"></script>
+  <script src="js/match-schedule.js?v=20261125_rev1" defer></script>
 </head>
 
 <body class="bg-uroko-cyan">
@@ -41,9 +41,15 @@
         <h4>開催時間：【 15:00～ 】<br></h4>
       </div>
 
-      <figure class="relay-img competition-img-placeholder">
-        <p>競技ルールの簡易画像は現在作成中です。</p>
-      </figure>
+      <section class="competition-pdf-section" aria-labelledby="relay-rules-title">
+        <h3 class="competition-pdf-title" id="relay-rules-title">競技説明</h3>
+        <div class="competition-pdf-viewer" data-match-schedule="relay-rules" data-pdf-label="競技説明PDF">
+          <div class="match-schedule">
+            <canvas class="match-schedule-canvas" aria-label="学科別対抗リレー競技説明"></canvas>
+            <p class="match-schedule-status" role="status">競技説明PDFを読み込んでいます。</p>
+          </div>
+        </div>
+      </section>
 
       <div class="syuugou-title">
         <h3>
@@ -51,13 +57,11 @@
         </h3>
       </div>
 
-      <div class="cs-placeholder-card" style="margin-bottom: 3.5rem;">
-        <div class="cs-icon-pod">
-          <i data-lucide="map-pin"></i>
+      <div class="competition-pdf-viewer" data-match-schedule="relay-meeting" data-pdf-label="集合場所PDF" style="margin-bottom: 3.5rem;">
+        <div class="match-schedule">
+          <canvas class="match-schedule-canvas" aria-label="学科別対抗リレー集合場所"></canvas>
+          <p class="match-schedule-status" role="status">集合場所PDFを読み込んでいます。</p>
         </div>
-        <h4 class="cs-title">MEETING POINT - 現在準備中</h4>
-        <p class="cs-desc">金城ふ頭特設アリーナ内の競技コートおよび集合待機場所は、現在実行委員会にて最終調整中です。確定次第公開いたします。</p>
-        <span class="cs-badge">STATUS: COMING SOON</span>
       </div>
 
       <div class="kyougiShousai-title">

@@ -7,7 +7,7 @@
   pdfjsLib.GlobalWorkerOptions.workerSrc =
     "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
-  function renderPage(schedule, page, renderTask) {
+  function renderPage(schedule, page, renderTask, pdfLabel) {
     var canvas = schedule.querySelector(".match-schedule-canvas");
     var status = schedule.querySelector(".match-schedule-status");
     if (!page || !canvas || !status) return;
@@ -38,8 +38,8 @@
       renderTask.value = null;
     }).catch(function (error) {
       if (error.name !== "RenderingCancelledException") {
-        console.error("対戦表の描画に失敗しました。", error);
-        status.textContent = "対戦表を表示できませんでした。";
+        console.error(pdfLabel + "の描画に失敗しました。", error);
+        status.textContent = pdfLabel + "を表示できませんでした。";
         status.hidden = false;
       }
     });
@@ -49,12 +49,13 @@
     var key = container.getAttribute("data-match-schedule");
     var schedule = container.querySelector(".match-schedule");
     var status = schedule.querySelector(".match-schedule-status");
+    var pdfLabel = container.getAttribute("data-pdf-label") || "対戦表";
     var pdfUrl = window.matchScheduleData[key];
     var page;
     var renderTask = { value: null };
 
     if (!pdfUrl) {
-      status.textContent = "対戦表の設定が見つかりませんでした。";
+      status.textContent = pdfLabel + "の設定が見つかりませんでした。";
       return;
     }
 
@@ -66,13 +67,13 @@
       return pdf.getPage(1);
     }).then(function (loadedPage) {
       page = loadedPage;
-      renderPage(schedule, page, renderTask);
+      renderPage(schedule, page, renderTask, pdfLabel);
       window.addEventListener("resize", function () {
-        renderPage(schedule, page, renderTask);
+        renderPage(schedule, page, renderTask, pdfLabel);
       });
     }).catch(function (error) {
-      console.error("対戦表PDFの読み込みに失敗しました。", error);
-      status.textContent = "対戦表を読み込めませんでした。";
+      console.error(pdfLabel + "の読み込みに失敗しました。", error);
+      status.textContent = pdfLabel + "を読み込めませんでした。";
     });
   });
 })();
