@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/common.css?v=20261022_rev3">
-  <link rel="stylesheet" href="css/cosplay.css?v=20261022_rev3">
+  <link rel="stylesheet" href="css/cosplay.css?v=20261125_rev2">
   <title>コスプレ大会 | RE:CREATION</title>
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -41,6 +41,39 @@
 
       <div class="cosShousai-container">
 
+
+        <!-- 2. 概要 -->
+        <div class="cos-summary cos-card-block">
+          <h3 class="cos-summary-title">結果</h3>
+          <table class="cos-summary-table">
+            <thead>
+              <tr>
+                <th scope="col">順位</th>
+                <th scope="col">参加者名</th>
+                <th scope="col">内容</th>
+              </tr>
+            </thead>
+            <tbody id="rankingDataCosplay">
+              <!-- ランキングデータはranking-data.jsから動的に生成 -->
+            </tbody>
+          </table>
+
+          <div id="cosplayAwardsSection" hidden>
+            <h4 class="cos-awards-title">各賞</h4>
+            <table class="cos-summary-table">
+              <thead>
+                <tr>
+                  <th scope="col">賞</th>
+                  <th scope="col">参加者名</th>
+                  <th scope="col">内容</th>
+                </tr>
+              </thead>
+              <tbody id="Cosplaysyoudata">
+                <!-- 各賞の結果はranking-data.jsから動的に生成 -->
+              </tbody>
+            </table>
+          </div>
+        </div>
 
         <!-- 2. 概要 -->
         <div class="cos-summary cos-card-block">
@@ -215,7 +248,7 @@
                   <td data-label="内容">仮面ライダーゼッツ・万津莫</td>
                 </tr>
                 <tr>
-                  <td data-label="名前">AD13B171_16_堀果梨<br>
+                  <td data-label="名前">AD13B171_16_堀果梨</td>
                   <td data-label="内容">UTAU・重音テト</td>
                 </tr>
                 <tr>
@@ -237,6 +270,8 @@
 
   <!-- <script src="js/jQuery-v3.7.1.js?v=20261022_rev3"></script> -->
   <script src="js/script.js?v=20261022_rev3"></script>
+  <script src="js/ranking-data.js?v=20261125_rev3"></script>
+  <script src="js/ranking.js?v=20261125_rev5"></script>
   <script>
     if (window.lucide) {
       lucide.createIcons();
