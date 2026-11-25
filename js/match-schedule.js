@@ -12,7 +12,8 @@
     var status = schedule.querySelector(".match-schedule-status");
     if (!page || !canvas || !status) return;
     var containerWidth = schedule.clientWidth;
-    if (!containerWidth) return;
+    if (!containerWidth || renderTask.width === containerWidth) return;
+    renderTask.width = containerWidth;
 
     var baseViewport = page.getViewport({ scale: 1 });
     var scale = containerWidth / baseViewport.width;
