@@ -60,7 +60,7 @@
       return;
     }
 
-    if (/-rules$|-meeting$/.test(key)) {
+    if (/-rules$|-meeting$/.test(key) && window.matchMedia("(min-width: 769px)").matches) {
       var canvas = schedule.querySelector(".match-schedule-canvas");
       var frame = document.createElement("iframe");
       frame.className = "match-schedule-pdf";
