@@ -63,7 +63,6 @@
     if (/-rules$|-meeting$/.test(key)) {
       var canvas = schedule.querySelector(".match-schedule-canvas");
       var image = document.createElement("img");
-      var pdfLink = document.createElement("a");
       image.className = "match-schedule-image";
       image.alt = canvas.getAttribute("aria-label") || pdfLabel;
       image.src = pdfUrl.replace(/\.pdf$/i, ".webp");
@@ -75,13 +74,7 @@
         status.textContent = pdfLabel + "を表示できませんでした。";
         status.hidden = false;
       });
-      pdfLink.className = "match-schedule-original";
-      pdfLink.href = pdfUrl;
-      pdfLink.target = "_blank";
-      pdfLink.rel = "noopener";
-      pdfLink.textContent = "全画面で表示";
       canvas.replaceWith(image);
-      schedule.appendChild(pdfLink);
       return;
     }
 
