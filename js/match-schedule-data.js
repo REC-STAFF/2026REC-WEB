@@ -3,7 +3,7 @@
 window.matchScheduleData = {
   dojji: './images/26レク_ドッジボール_対戦表.pdf',
   'dojji-rules': './images/ドッジボール%20競技説明.pdf',
-  'dojji-meeting': './images/ドッジボール%20集合時間.pdf',
+  'dojji-meeting': './images/ドッジボール%20集合場所.pdf',
   'ninnkyaku-rules': './images/〇人〇脚%20競技説明.pdf',
   'ninnkyaku-meeting': './images/〇人〇脚%20集合場所.pdf',
   relay: './images/26レク_学科別対抗リレー_対戦表.pdf',
