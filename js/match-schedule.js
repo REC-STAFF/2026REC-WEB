@@ -61,50 +61,27 @@
     }
 
     if (/-rules$|-meeting$/.test(key)) {
-      var isMobile = window.matchMedia("(max-width: 768px)").matches;
       var canvas = schedule.querySelector(".match-schedule-canvas");
-      var frame = document.createElement("iframe");
-      frame.className = "match-schedule-pdf";
-      frame.title = canvas.getAttribute("aria-label") || pdfLabel;
-      frame.src = pdfUrl + "#toolbar=0&navpanes=0&view=" + (isMobile ? "Fit" : "FitH");
-      frame.style.display = "block";
-      frame.style.width = "100%";
-      frame.style.height = "auto";
-      frame.style.aspectRatio = "16 / 9";
-      frame.style.border = "0";
-
-      if (isMobile) {
-        frame.addEventListener("load", function () {
-          var frameDocument = frame.contentDocument;
-          var pageImage = frameDocument && frameDocument.querySelector("img");
-          if (!pageImage) return;
-
-          pageImage.style.display = "block";
-          pageImage.style.width = "100%";
-          pageImage.style.height = "auto";
-        });
-
-        pdfjsLib.getDocument({
-          url: pdfUrl,
-          useSystemFonts: true,
-          disableFontFace: true
-        }).promise.then(function (pdf) {
-          return pdf.getPage(1);
-        }).then(function (firstPage) {
-          var viewport = firstPage.getViewport({ scale: 1 });
-          frame.style.aspectRatio = viewport.width + " / " + viewport.height;
-          canvas.replaceWith(frame);
-          status.hidden = true;
-        }).catch(function (error) {
-          console.error(pdfLabel + "の表示サイズ取得に失敗しました。", error);
-          status.textContent = pdfLabel + "を表示できませんでした。";
-          status.hidden = false;
-        });
-        return;
-      }
-
-      canvas.replaceWith(frame);
-      status.hidden = true;
+      var image = document.createElement("img");
+      var pdfLink = document.createElement("a");
+      image.className = "match-schedule-image";
+      image.alt = canvas.getAttribute("aria-label") || pdfLabel;
+      image.src = pdfUrl.replace(/\.pdf$/i, ".webp");
+      image.addEventListener("load", function () {
+        status.hidden = true;
+      });
+      image.addEventListener("error", function () {
+        console.error(pdfLabel + "のWebP画像を読み込めませんでした。");
+        status.textContent = pdfLabel + "を表示できませんでした。";
+        status.hidden = false;
+      });
+      pdfLink.className = "match-schedule-original";
+      pdfLink.href = pdfUrl;
+      pdfLink.target = "_blank";
+      pdfLink.rel = "noopener";
+      pdfLink.textContent = "全画面で表示";
+      canvas.replaceWith(image);
+      schedule.appendChild(pdfLink);
       return;
     }
 
