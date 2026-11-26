@@ -112,6 +112,12 @@ html {
   margin: 0 auto;
 }
 
+.match-schedule-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .match-schedule-status {
   padding: 1rem;
   color: #082F49;

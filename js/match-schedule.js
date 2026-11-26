@@ -62,17 +62,19 @@
 
     if (/-rules$|-meeting$/.test(key)) {
       var canvas = schedule.querySelector(".match-schedule-canvas");
-      var frame = document.createElement("iframe");
-      frame.className = "match-schedule-pdf";
-      frame.title = canvas.getAttribute("aria-label") || pdfLabel;
-      frame.src = pdfUrl + "#toolbar=0&navpanes=0&view=FitH";
-      frame.style.display = "block";
-      frame.style.width = "100%";
-      frame.style.height = "auto";
-      frame.style.aspectRatio = "16 / 9";
-      frame.style.border = "0";
-      canvas.replaceWith(frame);
-      status.hidden = true;
+      var image = document.createElement("img");
+      image.className = "match-schedule-image";
+      image.alt = canvas.getAttribute("aria-label") || pdfLabel;
+      image.src = pdfUrl.replace(/\.pdf$/i, ".webp");
+      image.addEventListener("load", function () {
+        status.hidden = true;
+      });
+      image.addEventListener("error", function () {
+        console.error(pdfLabel + "のWebP画像を読み込めませんでした。");
+        status.textContent = pdfLabel + "を表示できませんでした。";
+        status.hidden = false;
+      });
+      canvas.replaceWith(image);
       return;
     }
 
