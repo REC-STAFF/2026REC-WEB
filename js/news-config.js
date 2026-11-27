@@ -9,6 +9,16 @@ window.RECREATION_NEWS = [
     ],
     dateTime: "2026-11-27",
     dateLabel: "更新日：11/27",
+    text: "最終ランキング反映しました!!"
+  },
+  {
+    href: "ranking.html",
+    tags: [
+      { label: "重要", className: "news-tag news-tag-important" },
+      { label: "NEW", className: "karawaku" }
+    ],
+    dateTime: "2026-11-27",
+    dateLabel: "更新日：11/27",
     text: "前半競技の結果をランキングに反映しました!!"
   },
   {
