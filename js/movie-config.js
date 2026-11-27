@@ -1,6 +1,6 @@
 // index.htmlの公式ムービー表示を切り替える設定
 window.RECREATION_MOVIE_CONFIG = {
-  mode: "movie",//ここmovie=公式ムービー、live=YouTubeライブ配信
+  mode: "live",//ここmovie=公式ムービー、live=YouTubeライブ配信
   contents: {
     movie: {
       heading: "公式ムービー",
