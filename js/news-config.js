@@ -2,10 +2,20 @@
 //tagsのclassNameをkarawakuにすると表示を消せる
 window.RECREATION_NEWS = [
   {
-    href: "index.html#movie-section",
+    href: "ranking.html",
     tags: [
       { label: "重要", className: "news-tag news-tag-important" },
       { label: "NEW", className: "news-tag" }
+    ],
+    dateTime: "2026-11-27",
+    dateLabel: "更新日：11/27",
+    text: "前半競技の結果をランキングに反映しました!!"
+  },
+  {
+    href: "index.html#movie-section",
+    tags: [
+      { label: "重要", className: "news-tag news-tag-important" },
+      { label: "NEW", className: "karawaku" }
     ],
     dateTime: "2026-11-27",
     dateLabel: "更新日：11/27",
