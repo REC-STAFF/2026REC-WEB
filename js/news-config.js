@@ -15,7 +15,7 @@ window.RECREATION_NEWS = [
     href: "sennsyu.html",
     tags: [
       { label: "重要", className: "karawaku" },
-      { label: "NEW", className: "news-tag" }
+      { label: "NEW", className: "karawaku" }
     ],
     dateTime: "2026-11-25",
     dateLabel: "更新日：11/25",
