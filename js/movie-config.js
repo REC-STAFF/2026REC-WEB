@@ -11,7 +11,7 @@ window.RECREATION_MOVIE_CONFIG = {
     live: {
       heading: "YouTubeライブ配信",
       subheading: "YOUTUBE LIVE STREAM",
-      src: "https://www.youtube.com/embed/Apq1kyrnN9U?si=EC7YECGJ6wyW0QRb",
+      src: "https://www.youtube.com/embed/s-RoalzI58c?si=gfmx0SSmyF4S4rRK",
       title: "RE:CREATION 2026 YouTubeライブ配信"
     }
   }
