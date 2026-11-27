@@ -16,9 +16,9 @@ window.rankingData = [
 
 // コスプレ大会ランキング掲載データ（３位まで）
 window.rankingDataCosplay = [
-  { rank: 1, name: '集計準備中', naiyou: '--' },
-  { rank: 2, name: '集計準備中', naiyou: '--' },
-  { rank: 3, name: '集計準備中', naiyou: '--' }
+  { rank: 1, name: '空・コロンビーナ', naiyou: '50' },
+  { rank: 2, name: '重音テト', naiyou: '48' },
+  { rank: 3, name: '玄白', naiyou: '47' }
 ];
 
 // 当日、コスプレ大会の各賞を表示する場合は true に変更
