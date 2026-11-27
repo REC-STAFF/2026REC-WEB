@@ -300,11 +300,11 @@ body, body.page-ranking {
    【改善案4: トップ3表彰台ポディウム ＆ 4位〜8位コンパクトリスト化】
    ========================================================= */
 @media screen and (max-width: 768px) {
-  /* 改善案3: カード幅を84%（最大334px）に引き締め、左右両端にスタンド席が見えるクリアランスを確保 */
+  /* スマートフォンではランキング表の横幅を確保し、得点のはみ出しを防ぐ */
   .ranking-main {
     margin: 1.2rem auto 4.0rem;
-    width: 84%;
-    max-width: 334px;
+    width: 94%;
+    max-width: 520px;
   }
   .ranking-title {
     padding: 1.1rem 0.8rem;
@@ -337,7 +337,7 @@ body, body.page-ranking {
     border-radius: 16px;
     border: 1px solid rgba(56, 182, 240, 0.40);
     width: 100%;
-    max-width: 334px;
+    max-width: 520px;
     margin: 0 auto;
     background: linear-gradient(180deg, rgba(8, 36, 60, 0.65) 0%, rgba(5, 24, 42, 0.70) 100%) !important;
     backdrop-filter: blur(4px);
