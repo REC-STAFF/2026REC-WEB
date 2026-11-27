@@ -4,6 +4,16 @@ window.RECREATION_NEWS = [
   {
     href: "sennsyu.html",
     tags: [
+      { label: "重要", className: "news-tag news-tag-important" },
+      { label: "NEW", className: "news-tag" }
+    ],
+    dateTime: "2026-11-27",
+    dateLabel: "更新日：11/27",
+    text: "ライブ配信動画を掲載しました!!"
+  },
+  {
+    href: "sennsyu.html",
+    tags: [
       { label: "重要", className: "karawaku" },
       { label: "NEW", className: "news-tag" }
     ],
