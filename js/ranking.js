@@ -3,7 +3,7 @@
 
   const rankingBody = document.getElementById('ranking-body');
   if (rankingBody) {
-    if (!Array.isArray(window.rankingData) || window.rankingData.length !== 10) {
+    if (!Array.isArray(window.rankingData)) {
       console.error('ランキングデータを読み込めませんでした。');
     } else {
       const medalClasses = {
