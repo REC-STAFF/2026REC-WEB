@@ -2,7 +2,7 @@
 //tagsのclassNameをkarawakuにすると表示を消せる
 window.RECREATION_NEWS = [
   {
-    href: "sennsyu.html",
+    href: "index.html#movie-section",
     tags: [
       { label: "重要", className: "news-tag news-tag-important" },
       { label: "NEW", className: "news-tag" }
