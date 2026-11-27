@@ -92,7 +92,7 @@ window.RECREATION_NEWS = [
     text: "「フォトスポット」を更新しました!!"
   },
   {
-    href: "index.html",
+    // href: "index.html",
     tags: [
       { label: "NEW", className: "karawaku" },
       { label: "重要", className: "karawaku" }
