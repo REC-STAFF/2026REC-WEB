@@ -1,16 +1,17 @@
 // ランキング掲載データ
 // 順位・クラス名・得点を変更すると、ランキングページに反映されます。
 window.rankingData = [
-  { rank: 1, className: '集計準備中', score: '--' },
-  { rank: 2, className: '集計準備中', score: '--' },
-  { rank: 3, className: '集計準備中', score: '--' },
-  { rank: 4, className: '集計準備中', score: '--' },
-  { rank: 5, className: '集計準備中', score: '--' },
-  { rank: 6, className: '集計準備中', score: '--' },
-  { rank: 7, className: '集計準備中', score: '--' },
-  { rank: 8, className: '集計準備中', score: '--' },
-  { rank: 9, className: '集計準備中', score: '--' },
-  { rank: 10, className: '集計準備中', score: '--' }
+  { rank: 1, className: 'IW13A/IW14A', score: '190' },
+  { rank: 1, className: 'SE11A/MC11A', score: '190' },
+  { rank: 3, className: 'AT11B', score: '180' },
+  { rank: 3, className: 'CT12A/DA52A/DA12A_α', score: '180' },
+  { rank: 3, className: 'IA14A', score: '180' },
+  { rank: 6, className: 'AD13B', score: '170' },
+  { rank: 7, className: 'AT12A', score: '170' },
+  { rank: 8, className: 'CAチームβ', score: '160' },
+  { rank: 9, className: 'CT12B/DA12B_β', score: '160' },
+  { rank: 10, className: 'SC13A', score: '140' },
+  { rank: 10, className: 'SC12B', score: '140' }
 ];
 
 // コスプレ大会ランキング掲載データ（３位まで）
