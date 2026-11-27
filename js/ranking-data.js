@@ -11,7 +11,7 @@ window.rankingData = [
   { rank: 8, className: 'CAチームβ', score: '160' },
   { rank: 9, className: 'CT12B/DA12B_β', score: '160' },
   { rank: 10, className: 'SC13A', score: '140' },
-  { rank: 10, className: 'SC12B', score: '140' }
+  { rank: 10, className: 'SE12B', score: '140' }
 ];
 
 // コスプレ大会ランキング掲載データ（３位まで）
